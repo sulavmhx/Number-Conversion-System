@@ -1,0 +1,49 @@
+# Project: Project
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = Bitwise.o FileHandle.o Global.o Input.o main.o NumConv.o Output.o Utility.o
+LINKOBJ  = Bitwise.o FileHandle.o Global.o Input.o main.o NumConv.o Output.o Utility.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib32" -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32 -m32 -g3
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = Project.exe
+CXXFLAGS = $(CXXINCS) -m32 -g3
+CFLAGS   = $(INCS) -m32 -g3
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Bitwise.o: Bitwise.c
+	$(CC) -c Bitwise.c -o Bitwise.o $(CFLAGS)
+
+FileHandle.o: FileHandle.c
+	$(CC) -c FileHandle.c -o FileHandle.o $(CFLAGS)
+
+Global.o: Global.c
+	$(CC) -c Global.c -o Global.o $(CFLAGS)
+
+Input.o: Input.c
+	$(CC) -c Input.c -o Input.o $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+NumConv.o: NumConv.c
+	$(CC) -c NumConv.c -o NumConv.o $(CFLAGS)
+
+Output.o: Output.c
+	$(CC) -c Output.c -o Output.o $(CFLAGS)
+
+Utility.o: Utility.c
+	$(CC) -c Utility.c -o Utility.o $(CFLAGS)

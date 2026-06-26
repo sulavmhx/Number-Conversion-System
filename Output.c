@@ -69,47 +69,38 @@ void bitwise_ope_output()
 	switch(choice1)
 	{
 		case 1:
-			AND();
-			printf("\nResult = %u", result);
+			printf("\nResult AND = %u", result);
 		break;
 		
 		case 2:
-			OR();
-			printf("\nResult = %u", result);
+			printf("\nResult OR = %u", result);
 		break;
 		
 		case 3:
-			NOT();
-			printf("\nResult = %u", result);
+			printf("\nResult NOT = %u", result);
 		break;
 		
 		case 4:
-			XOR();
-			printf("\nResult = %u", result);
+			printf("\nResult XOR = %u", result);
 		break;
 		
 		case 5:
-			XNOR();
-			printf("\nResult = %u", result);
+			printf("\nResult X-NOR = %u", result);
 		break;
 		
 		case 6:
-			NAND();
-			printf("\nResult = %u", result);
+			printf("\nResult NAND = %u", result);
 		break;
 		
 		case 7:
-			Left_Shift();
-			printf("\nResult = %u", result);
+			printf("\nResult Left Shift = %u", result);
 		break;
 		
 		case 8:
-			Right_Shift();
-			printf("\nResult = %u", result);
+			printf("\nResult Right Shift = %u", result);
 		break;
 		
 		case 9:
-			Count_Set_Bits();
 			printf("\nSet Bits = %d", count);
 		break;
 		
@@ -122,9 +113,8 @@ void bitwise_ope_output()
 		break;
 	}
 	
-	Num_logs_input();
-	int back;
-
+	Bit_logs_input();
+	
 	printf("\n[0] Back To BitTools System");
 	printf("\n[1] Exit");
 	printf("\nEnter Choice: ");

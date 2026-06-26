@@ -35,78 +35,6 @@ typedef struct
 
 } BitLog;
 
-char *base_name(int base)
-{
-    switch(base)
-    {
-        case 1:
-            return "Binary";
-        break;
-
-        case 2:
-            return "Decimal";
-        break;
-
-        case 3:
-            return "Octal";
-        break;
-
-        case 4:
-            return "Hexa-Decimal";
-        break;
-
-        default:
-            return "Unknown";
-        break;
-    }
-}
-
-char *operation_name(int op)
-{
-    switch(op)
-    {
-        case 1:
-            return "AND";
-        break;
-
-        case 2:
-            return "OR";
-        break;
-
-        case 3:
-            return "NOT";
-        break;
-
-        case 4:
-            return "XOR";
-        break;
-
-        case 5:
-            return "XNOR";
-        break;
-
-        case 6:
-            return "NAND";
-        break;
-
-        case 7:
-            return "LEFT SHIFT";
-        break;
-
-        case 8:
-            return "RIGHT SHIFT";
-        break;
-
-        case 9:
-            return "COUNT SET BITS";
-        break;
-
-        default:
-            return "UNKNOWN";
-        break;
-    }
-}
-
 void Num_logs_input()
 {
     FILE *fp;
@@ -177,11 +105,47 @@ void Num_logs_output()
 
     while(fread(&log, sizeof(NumLog), 1, fp) == 1)
     {
-        printf("Input Base   : %s\n",
-               base_name(log.input_base));
+        printf("Input Base   : ");
 
-        printf("Output Base  : %s\n",
-               base_name(log.output_base));
+        switch(log.input_base)
+        {
+            case 1:
+                printf("Binary\n");
+                break;
+            case 2:
+                printf("Decimal\n");
+                break;
+            case 3:
+                printf("Octal\n");
+                break;
+            case 4:
+                printf("Hexa-Decimal\n");
+                break;
+            default:
+                printf("Unknown\n");
+                break;
+        }
+
+        printf("Output Base  : ");
+
+        switch(log.output_base)
+        {
+            case 1:
+                printf("Binary\n");
+                break;
+            case 2:
+                printf("Decimal\n");
+                break;
+            case 3:
+                printf("Octal\n");
+                break;
+            case 4:
+                printf("Hexa-Decimal\n");
+                break;
+            default:
+                printf("Unknown\n");
+                break;
+        }
 
         printf("Input Value  : %s\n",
                log.input_number);
@@ -250,8 +214,41 @@ void Bit_logs_output()
 
     while(fread(&log, sizeof(BitLog), 1, fp) == 1)
     {
-        printf("Operation : %s\n",
-               operation_name(log.operation));
+	printf("Operation : ");
+	
+	        switch(log.operation)
+	        {
+	            case 1:
+	                printf("AND\n");
+	                break;
+	            case 2:
+	                printf("OR\n");
+	                break;
+	            case 3:
+	                printf("NOT\n");
+	                break;
+	            case 4:
+	                printf("XOR\n");
+	                break;
+	            case 5:
+	                printf("XNOR\n");
+	                break;
+	            case 6:
+	                printf("NAND\n");
+	                break;
+	            case 7:
+	                printf("LEFT SHIFT\n");
+	                break;
+	            case 8:
+	                printf("RIGHT SHIFT\n");
+	                break;
+	            case 9:
+	                printf("COUNT SET BITS\n");
+	                break;
+	            default:
+	                printf("UNKNOWN\n");
+	                break;
+	        }
 
         printf("Number 1  : %u\n",
                log.first_number);

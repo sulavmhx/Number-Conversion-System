@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <windows.h>
 
 #include "Global.h"
 #include "utility.h"
@@ -6,123 +7,261 @@
 
 void AND()
 {
-    clear_screen();
+    And:
+	clear_screen();
 
     printf("========== AND ==========\n");
 
     printf("Enter First Number : ");
-    scanf("%u", &num1);
-
+	if(scanf("%d", &num1) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto And;
+	} 
+	
     printf("Enter Second Number : ");
-    scanf("%u", &num2);
-
+	if(scanf("%d", &num2) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto And;
+	}
+	
     result = num1 & num2;
 }
 
 void OR()
 {
+	Or:
     clear_screen();
 
     printf("========== OR ==========\n");
 
     printf("Enter First Number : ");
-    scanf("%u", &num1);
+    if(scanf("%d", &num1) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto Or;
+	} 
 
     printf("Enter Second Number : ");
-    scanf("%u", &num2);
-
+	if(scanf("%d", &num2) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto Or;
+	}
+	
     result = num1 | num2;
 }
 void NOT()
 {
+	Not:
     clear_screen();
 
     printf("========== NOT ==========\n");
 
     printf("Enter Number : ");
-    scanf("%u", &num1);
-
+	if(scanf("%d", &num1) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto Not;
+	} 
+	
     result = ~num1;
 }
 void XOR()
 {
+	Xor:
     clear_screen();
 
     printf("========== XOR ==========\n");
 
     printf("Enter First Number : ");
-    scanf("%u", &num1);
-
+	if(scanf("%d", &num1) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto Xor;
+	} 
+	
     printf("Enter Second Number : ");
-    scanf("%u", &num2);
+    if(scanf("%d", &num2) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto Xor;
+	} 
 
     result = num1 ^ num2;
 }
 void XNOR()
 {
+	Xnor:
     clear_screen();
 
     printf("========== XNOR ==========\n");
 
-    printf("Enter First Number : ");
-    scanf("%u", &num1);
-
+    printf("Enter First Number : ");	
+	if(scanf("%d", &num1) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto Xnor;
+	} 
+	
     printf("Enter Second Number : ");
-    scanf("%u", &num2);
-
+   	if(scanf("%d", &num2) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto Xnor;
+	}
+	
     result = ~(num1 ^ num2);
 }
 void NAND()
 {
+	Nand:
     clear_screen();
 
     printf("========== NAND ==========\n");
 
     printf("Enter First Number : ");
-    scanf("%u", &num1);
-
-    printf("Enter Second Number : ");
-    scanf("%u", &num2);
-
+	if(scanf("%d", &num1) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto Nand;
+	}
+	
+    printf("Enter Second Number : ");	
+	if(scanf("%d", &num2) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto Nand;
+	}
+	
     result = ~(num1 & num2);
 
 }
 void Left_Shift()
 {
+	lsif:
     clear_screen();
 
     printf("========== LEFT SHIFT ==========\n");
 
     printf("Enter Number : ");
-    scanf("%u", &num1);
-
+	if(scanf("%d", &num1) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto lsif;
+	} 
+	
     printf("Enter Shift Count : ");
-    scanf("%d", &shift);
-
+	if(scanf("%d", &shift) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto lsif;
+	}
     result = num1 << shift;    
 }
 void Right_Shift()
 {
+	rsif:
     clear_screen();
 
     printf("========== RIGHT SHIFT ==========\n");
 
-    printf("Enter Number : ");
-    scanf("%u", &num1);
-
+    printf("Enter Number : ");  
+	if(scanf("%d", &num1) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto rsif;
+	}
+	
     printf("Enter Shift Count : ");
-    scanf("%d", &shift);
+	if(scanf("%d", &shift) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto rsif;
+	}
+    
 
     result = num1 >> shift;
 }
 void Count_Set_Bits()
 {
+	cnt:
     clear_screen();
 
     printf("========== COUNT SET BITS ==========\n");
 
     printf("Enter Number : ");
-    scanf("%u", &num1);
+    
+	if(scanf("%d", &num1) != 1)
+	{
+   		clear_buffer();
+   		clear_screen();
+  		printf("\nINVALID INPUT!!!!!!\n");
+		printf("\n LOADING PLEASE WAIT..... \n");
+ 		Sleep(1000);
+    	goto cnt;
+	}
 
     while(num1)
     {

@@ -12,7 +12,53 @@
 
 void number_conv_output()
 {
-    // output 
+    // output
+    clear_screen();
+	printf("███╗   ██╗██╗   ██╗███╗   ███╗     ██████╗ ██████╗ ███╗   ██╗██╗   ██╗███████╗██████╗ ████████╗███████╗██████╗ \n");
+	printf("████╗  ██║██║   ██║████╗ ████║    ██╔════╝██╔═══██╗████╗  ██║██║   ██║██╔════╝██╔══██╗╚══██╔══╝██╔════╝██╔══██╗\n");
+	printf("██╔██╗ ██║██║   ██║██╔████╔██║    ██║     ██║   ██║██╔██╗ ██║██║   ██║█████╗  ██████╔╝   ██║   █████╗  ██████╔╝\n");
+	printf("██║╚██╗██║██║   ██║██║╚██╔╝██║    ██║     ██║   ██║██║╚██╗██║╚██╗ ██╔╝██╔══╝  ██╔══██╗   ██║   ██╔══╝  ██╔══██╗\n");
+	printf("██║ ╚████║╚██████╔╝██║ ╚═╝ ██║    ╚██████╗╚██████╔╝██║ ╚████║ ╚████╔╝ ███████╗██║  ██║   ██║   ███████╗██║  ██║\n");
+	printf("╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝\n");
+	
+	printf("\nInput Base   : ");
+    switch(input_choice)
+    {
+        case 1:
+			printf("Binary(2)"); 
+		break;
+        case 2: 
+			printf("Decimal(10)"); 
+		break;
+        case 3: 
+			printf("Octal(8)"); 
+		break;
+        case 4: 
+			printf("Hexa-Decimal(16)"); 
+		break;
+    }
+    
+	//Output type
+	
+    printf("\nOutput Base  : ");
+    switch(output_choice)
+    {
+    	case 0:
+    		return;
+    	break;
+        case 1: 
+			printf("Binary(2)"); 
+		break;
+        case 2:
+			printf("Decimal(10)"); 
+		break;
+        case 3:
+			printf("Octal(8)"); 
+		break;
+        case 4:
+			printf("Hexa-Decimal(16)"); 
+		break;
+    }
     
     switch(output_choice)
     {
@@ -37,6 +83,7 @@ void number_conv_output()
             break;
     }
     Num_logs_input();
+    
 	printf("\n========================================");
 
 	printf("\n[0] Back To Number Conversion System");
@@ -66,6 +113,12 @@ void number_conv_output()
 	}
 void bitwise_ope_output()
 {
+	printf("██████╗ ██╗████████╗██╗    ██╗██╗███████╗███████╗    ███████╗██╗   ██╗███████╗\n");
+	printf("██╔══██╗██║╚══██╔══╝██║    ██║██║██╔════╝██╔════╝    ██╔════╝╚██╗ ██╔╝██╔════╝\n");
+	printf("██████╔╝██║   ██║   ██║ █╗ ██║██║███████╗█████╗      ███████╗ ╚████╔╝ ███████╗\n");
+	printf("██╔══██╗██║   ██║   ██║███╗██║██║╚════██║██╔══╝      ╚════██║  ╚██╔╝  ╚════██║\n");
+	printf("██████╔╝██║   ██║   ╚███╔███╔╝██║███████║███████╗    ███████║   ██║   ███████║\n");
+	printf("╚═════╝ ╚═╝   ╚═╝    ╚══╝╚══╝ ╚═╝╚══════╝╚══════╝    ╚══════╝   ╚═╝   ╚══════╝\n");
 	switch(choice1)
 	{
 		case 1:
@@ -114,6 +167,8 @@ void bitwise_ope_output()
 	}
 	
 	Bit_logs_input();
+	
+	printf("\n========================================");
 	
 	printf("\n[0] Back To BitTools System");
 	printf("\n[1] Exit");

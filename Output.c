@@ -98,11 +98,11 @@ void number_conv_output()
 
 		switch(back)
 		{
-	    	case 1:
+	    	case 0:
 	    		return;
 	       	break;
 	
-	    	case 2:
+	    	case 1:
 	        	exit(0);
 	        break;
 	
@@ -162,7 +162,6 @@ void bitwise_ope_output()
 			printf("\n INVALID CHOICE !!!!! \n");
 			printf("\n LOADING PLEASE WAIT..... \n");
 			Sleep(1000); 
-			bitwise_ope_input();
 		break;
 	}
 	

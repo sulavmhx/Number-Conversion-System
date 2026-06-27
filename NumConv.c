@@ -96,11 +96,11 @@ void binary()
     int j;
     char temp[65];
 
-    if(val == 0)
-    {
-        strcpy(result_bin, "0");
-        return;
-    }
+	if(val <= 0)
+	{
+	    strcpy(result_bin, "0");
+	    return;
+	}
 
     while(val > 0)
     {

@@ -31,7 +31,7 @@ num_start:
     printf("\n[3] Octal");
     printf("\n[4] Hexa-Decimal");
     printf("\n[0] Back");
-    printf("-----------------------------------------------------------------------------");
+    printf("\n-----------------------------------------------------------------------------");
     printf("\nEnter choice: ");
     
 	if(scanf("%d", &input_choice) != 1)
@@ -161,7 +161,7 @@ num_start:
     {
         case 1:
             printf("\nInput Binary Number: ");
-            scanf("%s", number);
+            scanf("%63s", number);;
             if(binaryinput_check(number) == 0)
 				{
 					clear_screen();
@@ -174,7 +174,7 @@ num_start:
 
         case 2:
             printf("\nInput Decimal Number: ");
-            scanf("%s", number);
+            scanf("%63s", number);;
             if(decimalinput_check(number) == 0)
 				{
 					clear_screen();
@@ -187,7 +187,7 @@ num_start:
 
         case 3:
             printf("\nInput Octal Number: ");
-            scanf("%s", number);
+            scanf("%63s", number);;
             if(octalinput_check(number) == 0)
 				{
 					clear_screen();
@@ -200,7 +200,7 @@ num_start:
 
         case 4:
             printf("\nInput Hexa-Decimal Number: ");
-            scanf("%s", number);
+            scanf("%63s", number);;
             if(hexainput_check(number) == 0)
 				{
 					clear_screen();
@@ -217,6 +217,7 @@ num_start:
 void bitwise_ope_input()
 {
 	bit_start:
+	num1 = num2 = result = count = 0;
 	clear_screen();
 	
 	printf("██████╗ ██╗████████╗██╗    ██╗██╗███████╗███████╗    ███████╗██╗   ██╗███████╗\n");

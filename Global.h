@@ -15,6 +15,7 @@ extern unsigned int result;
 extern unsigned int back;
 extern unsigned int num1;
 extern unsigned int num2;
+extern unsigned int temp;
 
 extern int count;
 extern int shift;

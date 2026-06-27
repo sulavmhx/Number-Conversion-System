@@ -16,6 +16,7 @@ unsigned int result= 0;
 unsigned int num1= 0;
 unsigned int num2= 0;
 unsigned int back=0;
+unsigned int temp;
 
 int count= 0;
 int shift= 0;

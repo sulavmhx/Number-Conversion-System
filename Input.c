@@ -161,7 +161,11 @@ num_start:
     {
         case 1:
             printf("\nInput Binary Number: ");
-            scanf("%63s", number);;
+            
+            clear_buffer();                 // remove leftover '\n' from previous scanf
+			fgets(number, sizeof(number), stdin);
+			number[strcspn(number, "\n")] = '\0';;
+			
             if(binaryinput_check(number) == 0)
 				{
 					clear_screen();
@@ -174,7 +178,11 @@ num_start:
 
         case 2:
             printf("\nInput Decimal Number: ");
-            scanf("%63s", number);;
+            
+            clear_buffer();                 // remove leftover '\n' from previous scanf
+			fgets(number, sizeof(number), stdin);
+			number[strcspn(number, "\n")] = '\0';;
+			
             if(decimalinput_check(number) == 0)
 				{
 					clear_screen();
@@ -187,7 +195,11 @@ num_start:
 
         case 3:
             printf("\nInput Octal Number: ");
-            scanf("%63s", number);;
+            
+            clear_buffer();                 // remove leftover '\n' from previous scanf
+			fgets(number, sizeof(number), stdin);
+			number[strcspn(number, "\n")] = '\0';;
+			
             if(octalinput_check(number) == 0)
 				{
 					clear_screen();
@@ -200,7 +212,11 @@ num_start:
 
         case 4:
             printf("\nInput Hexa-Decimal Number: ");
-            scanf("%63s", number);;
+            
+            clear_buffer();                 // remove leftover '\n' from previous scanf
+			fgets(number, sizeof(number), stdin);
+			number[strcspn(number, "\n")] = '\0';;
+			
             if(hexainput_check(number) == 0)
 				{
 					clear_screen();

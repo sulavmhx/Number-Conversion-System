@@ -23,3 +23,22 @@ void clear_buffer()
             break;
     }
 }
+
+void remove_spaces(char source[], char destination[])
+{
+    int i = 0;
+    int j = 0;
+
+    while(source[i] != '\0')
+    {
+        if(source[i] != ' ')
+        {
+            destination[j] = source[i];
+            j++;
+        }
+
+        i++;
+    }
+
+    destination[j] = '\0';
+}

@@ -11,6 +11,7 @@ long result_oct= 0;
 long result_hexa= 0;
 
 char result_bin[65];
+char clean[65];
 
 unsigned int result= 0;
 unsigned int num1= 0;

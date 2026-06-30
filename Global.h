@@ -10,6 +10,7 @@ extern long result_oct;
 extern long result_hexa;
 
 extern char result_bin[65];
+extern char clean[65];
 
 extern unsigned int result;
 extern unsigned int back;

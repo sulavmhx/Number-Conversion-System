@@ -3,6 +3,7 @@
 
 #include "Global.h"
 #include "NumConv.h"
+#include "Utility.h"
 
 int binaryinput_check(char number[])
 {
@@ -10,7 +11,9 @@ int binaryinput_check(char number[])
 
     while(number[i] != '\0')
     {
-        if(number[i] != '0' && number[i] != '1')
+        if(number[i] != '0' &&
+           number[i] != '1' &&
+           number[i] != ' ')
         {
             return 0;
         }
@@ -89,8 +92,17 @@ void binary()
         base = 8;
     else
         base = 16;
-
-    long val = strtol(number, NULL, base); // strtol() converts a string containing a number into a long integer value based on the specified base.
+	
+	if(base == 2)
+	{
+	    remove_spaces(number, clean);
+	}
+	else
+	{
+	    strcpy(clean, number);
+	}
+	
+	long val = strtol(clean, NULL, base); // strtol() converts a string containing a number into a long integer value based on the specified base.
 
     int i = 0;
     int j;
@@ -134,7 +146,16 @@ void decimal()
     else
         base = 16;
 
-    result_dec = strtol(number, NULL, base);
+	if(base == 2)
+	{
+	    remove_spaces(number, clean);
+	}
+	else
+	{
+	    strcpy(clean, number);
+	}
+	
+	result_dec = strtol(clean, NULL, base);
 }
 
 void octal()
@@ -154,7 +175,16 @@ void octal()
     else
         base = 16;
 
-    result_oct = strtol(number, NULL, base);
+	if(base == 2)
+	{
+	    remove_spaces(number, clean);
+	}
+	else
+	{
+	    strcpy(clean, number);
+	}
+	
+	result_oct = strtol(clean, NULL, base);
 }
 
 void hexa_decimal()
@@ -174,5 +204,14 @@ void hexa_decimal()
     else
         base = 16;
 
-    result_hexa = strtol(number, NULL, base);
+	if(base == 2)
+	{
+	    remove_spaces(number, clean);
+	}
+	else
+	{
+	    strcpy(clean, number);
+	}
+	
+	result_hexa = strtol(clean, NULL, base);
 }

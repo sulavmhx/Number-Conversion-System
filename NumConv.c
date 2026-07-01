@@ -30,7 +30,8 @@ int decimalinput_check(char number[])
 
     while(number[i] != '\0')
     {
-        if(number[i] < '0' || number[i] > '9')
+        if((number[i] < '0' || number[i] > '9') &&
+           number[i] != ' ')
         {
             return 0;
         }
@@ -47,10 +48,11 @@ int octalinput_check(char number[])
 
     while(number[i] != '\0')
     {
-        if(number[i] < '0' || number[i] > '7')
-        {
-            return 0;
-        }
+		if((number[i] < '0' || number[i] > '7') &&
+		   number[i] != ' ')
+		{
+		    return 0;
+		}
 
         i++;
     }
@@ -64,14 +66,15 @@ int hexainput_check(char number[])
 
     while(number[i] != '\0')
     {
-        if(
-            !((number[i] >= '0' && number[i] <= '9') ||
-              (number[i] >= 'A' && number[i] <= 'F') ||
-              (number[i] >= 'a' && number[i] <= 'f'))
-          )
-        {
-            return 0;
-        }
+		if(
+		    !((number[i] >= '0' && number[i] <= '9') ||
+		      (number[i] >= 'A' && number[i] <= 'F') ||
+		      (number[i] >= 'a' && number[i] <= 'f') ||
+		      number[i] == ' ')
+		)
+		{
+		    return 0;
+		}
 
         i++;
     }

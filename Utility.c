@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Utility.h"
+#include <time.h>
+#include "Global.h"
+
+void updateTime(void)
+{
+    time_t now = time(NULL);
+    struct tm *t = localtime(&now);
+
+    strftime(currentTime, sizeof(currentTime),
+             "%A, %d %B %Y  %I:%M:%S %p", t);
+}
 
 void clear_screen()
 {

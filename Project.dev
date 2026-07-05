@@ -4,14 +4,14 @@ name=Project
 Type=1
 Ver=2
 ObjFiles=
-Includes=Pj\include
-Libs=Pj\lib
+Includes=
+Libs=
 PrivateResource=
 ResourceIncludes=
 MakeIncludes=
-Compiler=
-CppCompiler=
-Linker=-lraylib -lopengl32 -lgdi32 -lwinmm_@@_
+Compiler=-I"include"_@@_
+CppCompiler=-I"include"_@@_
+Linker=-L"lib" -lraylib -lopengl32 -lgdi32 -lwinmm -lmsvcrt_@@_
 IsCpp=0
 Icon=
 ExeOutput=
@@ -24,12 +24,12 @@ HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
 CommandLine=
-Folders=
+Folders=include,lib
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=3
 CompilerSettings=0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;1;0;0;0;8;0;0;0
-UnitCount=15
+UnitCount=17
 
 [VersionInfo]
 Major=1
@@ -110,27 +110,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit7]
-FileName=Output.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
 [Unit8]
-FileName=Utility.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit9]
 FileName=Bitwise.h
 CompileCpp=0
 Folder=
@@ -140,7 +120,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit10]
+[Unit9]
 FileName=FileHandle.h
 CompileCpp=0
 Folder=
@@ -150,7 +130,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit11]
+[Unit10]
 FileName=Global.h
 CompileCpp=0
 Folder=
@@ -160,7 +140,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit12]
+[Unit11]
 FileName=Input.h
 CompileCpp=0
 Folder=
@@ -170,7 +150,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit13]
+[Unit12]
 FileName=NumConv.h
 CompileCpp=0
 Folder=
@@ -181,7 +161,27 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit14]
-FileName=Output.h
+FileName=include\raylib.h
+CompileCpp=0
+Folder=include
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit15]
+FileName=lib\libraylib.a
+CompileCpp=0
+Folder=lib
+Compile=0
+Link=0
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit16]
+FileName=Drawing.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -190,7 +190,47 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit15]
+[Unit17]
+FileName=Drawing.h
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+CompileCpp=0
+
+[Unit18]
+FileName=Drawing.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit19]
+FileName=Drawing.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
+FileName=Utility.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit13]
 FileName=Utility.h
 CompileCpp=0
 Folder=

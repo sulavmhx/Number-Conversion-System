@@ -6,40 +6,14 @@
 #include "FileHandle.h"
 #include "Utility.h"
 #include "Global.h"
-
-#define NUM_LOG_FILE "NumConvLog.txt"
-#define BIT_LOG_FILE "BitwiseLog.txt"
-
-typedef struct
-{
-    int input_base;
-    int output_base;
-
-    char input_number[64];
-    char output_number[64];
-
-    time_t used_time;
-
-} NumLog;
-
-typedef struct
-{
-    int operation;
-
-    unsigned int first_number;
-    unsigned int second_number;
-
-    unsigned int result;
-
-    time_t used_time;
-
-} BitLog;
+#include "raylib.h"
 
 void Num_logs_input()
 {
     FILE *fp;
     NumLog log;
-
+	
+	TraceLog(LOG_INFO, "Saving log...");
     fp = fopen(NUM_LOG_FILE, "ab");
 
     if(fp == NULL)

@@ -1,4 +1,4 @@
-#ifndef NUMCONV_H
+		#ifndef NUMCONV_H
 #define NUMCONV_H
 
 int binaryinput_check(char number[]);

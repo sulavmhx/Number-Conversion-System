@@ -1,40 +1,43 @@
 #include <stdio.h>
-#include <windows.h>
+
 
 #include "Global.h"
 #include "utility.h"
 #include "bitwise.h"
-
+#include "raylib.h"
 void AND()
 {
-    And:
-	clear_screen();
-
-    printf("============================= AND =============================\n");
-
-    printf("Enter First Number : ");
-	if(scanf("%u", &num1) != 1)
-	{
-   		clear_buffer();
-   		clear_screen();
-  		printf("\nINVALID INPUT!!!!!!\n");
-		printf("\n LOADING PLEASE WAIT..... \n");
- 		Sleep(1000);
-    	goto And;
-	} 
 	
-    printf("Enter Second Number : ");
-	if(scanf("%u", &num2) != 1)
-	{
-   		clear_buffer();
-   		clear_screen();
-  		printf("\nINVALID INPUT!!!!!!\n");
-		printf("\n LOADING PLEASE WAIT..... \n");
- 		Sleep(1000);
-    	goto And;
-	}
-	
-    result = num1 & num2;
+        DrawText("Binary",585,498,25,WHITE);
+        Rectangle btnBin = {500,480,400,60};
+//    And:
+//	clear_screen();
+//
+//    printf("============================= AND =============================\n");
+//
+//    printf("Enter First Number : ");
+//	if(scanf("%u", &num1) != 1)
+//	{
+//   		clear_buffer();
+//   		clear_screen();
+//  		printf("\nINVALID INPUT!!!!!!\n");
+//		printf("\n LOADING PLEASE WAIT..... \n");
+// 		WaitTime(1.0);
+//    	goto And;
+//	} 
+//	
+//    printf("Enter Second Number : ");
+//	if(scanf("%u", &num2) != 1)
+//	{
+//   		clear_buffer();
+//   		clear_screen();
+//  		printf("\nINVALID INPUT!!!!!!\n");
+//		printf("\n LOADING PLEASE WAIT..... \n");
+// 		WaitTime(1.0);
+//    	goto And;
+//	}
+//	
+//    result = num1 & num2;
 }
 
 void OR()
@@ -51,7 +54,7 @@ void OR()
    		clear_screen();
   		printf("\nINVALID INPUT!!!!!!\n");
 		printf("\n LOADING PLEASE WAIT..... \n");
- 		Sleep(1000);
+ 		WaitTime(1.0);
     	goto Or;
 	} 
 
@@ -62,7 +65,7 @@ void OR()
    		clear_screen();
   		printf("\nINVALID INPUT!!!!!!\n");
 		printf("\n LOADING PLEASE WAIT..... \n");
- 		Sleep(1000);
+ 		WaitTime(1.0);
     	goto Or;
 	}
 	
@@ -82,7 +85,7 @@ void NOT()
    		clear_screen();
   		printf("\nINVALID INPUT!!!!!!\n");
 		printf("\n LOADING PLEASE WAIT..... \n");
- 		Sleep(1000);
+ 		WaitTime(1.0);
     	goto Not;
 	} 
 	
@@ -102,7 +105,7 @@ void XOR()
    		clear_screen();
   		printf("\nINVALID INPUT!!!!!!\n");
 		printf("\n LOADING PLEASE WAIT..... \n");
- 		Sleep(1000);
+ 		WaitTime(1.0);
     	goto Xor;
 	} 
 	
@@ -113,7 +116,7 @@ void XOR()
    		clear_screen();
   		printf("\nINVALID INPUT!!!!!!\n");
 		printf("\n LOADING PLEASE WAIT..... \n");
- 		Sleep(1000);
+ 		WaitTime(1.0);
     	goto Xor;
 	} 
 
@@ -133,7 +136,7 @@ void XNOR()
    		clear_screen();
   		printf("\nINVALID INPUT!!!!!!\n");
 		printf("\n LOADING PLEASE WAIT..... \n");
- 		Sleep(1000);
+ 		WaitTime(1.0);
     	goto Xnor;
 	} 
 	
@@ -144,7 +147,7 @@ void XNOR()
    		clear_screen();
   		printf("\nINVALID INPUT!!!!!!\n");
 		printf("\n LOADING PLEASE WAIT..... \n");
- 		Sleep(1000);
+ 		WaitTime(1.0);
     	goto Xnor;
 	}
 	
@@ -164,7 +167,7 @@ void NAND()
    		clear_screen();
   		printf("\nINVALID INPUT!!!!!!\n");
 		printf("\n LOADING PLEASE WAIT..... \n");
- 		Sleep(1000);
+ 		WaitTime(1.0);
     	goto Nand;
 	}
 	
@@ -175,7 +178,7 @@ void NAND()
    		clear_screen();
   		printf("\nINVALID INPUT!!!!!!\n");
 		printf("\n LOADING PLEASE WAIT..... \n");
- 		Sleep(1000);
+ 		WaitTime(1.0);
     	goto Nand;
 	}
 	
@@ -196,7 +199,7 @@ lsif:
         clear_screen();
         printf("\nINVALID INPUT!!!!!!\n");
         printf("\nLOADING PLEASE WAIT.....\n");
-        Sleep(1000);
+        WaitTime(1.0);
         goto lsif;
     }
 
@@ -207,7 +210,7 @@ lsif:
         clear_screen();
         printf("\nINVALID INPUT!!!!!!\n");
         printf("\nLOADING PLEASE WAIT.....\n");
-        Sleep(1000);
+        WaitTime(1.0);
         goto lsif;
     }
 
@@ -217,7 +220,7 @@ lsif:
         printf("\nINVALID SHIFT COUNT!!!!!!\n");
         printf("Shift count must be between 0 and 31.\n");
         printf("\nLOADING PLEASE WAIT.....\n");
-        Sleep(1000);
+        WaitTime(1.0);
         goto lsif;
     }
 
@@ -238,7 +241,7 @@ rsif:
         clear_screen();
         printf("\nINVALID INPUT!!!!!!\n");
         printf("\nLOADING PLEASE WAIT.....\n");
-        Sleep(1000);
+        WaitTime(1.0);
         goto rsif;
     }
 
@@ -249,7 +252,7 @@ rsif:
         clear_screen();
         printf("\nINVALID INPUT!!!!!!\n");
         printf("\nLOADING PLEASE WAIT.....\n");
-        Sleep(1000);
+        WaitTime(1.0);
         goto rsif;
     }
 
@@ -259,7 +262,7 @@ rsif:
         printf("\nINVALID SHIFT COUNT!!!!!!\n");
         printf("Shift count must be between 0 and 31.\n");
         printf("\nLOADING PLEASE WAIT.....\n");
-        Sleep(1000);
+        WaitTime(1.0);
         goto rsif;
     }
 
@@ -284,7 +287,7 @@ void Count_Set_Bits()
    		clear_screen();
   		printf("\nINVALID INPUT!!!!!!\n");
 		printf("\n LOADING PLEASE WAIT..... \n");
- 		Sleep(1000);
+ 		WaitTime(1.0);
     	goto cnt;
 	}
 	

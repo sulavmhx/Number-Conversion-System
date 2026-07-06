@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 #include "Input.h"
-#include "Output.h"
 #include "Utility.h"
 #include "Global.h"
 #include "Bitwise.h"
@@ -72,15 +71,59 @@ void num_conv_input(void)
 }
 else
 {
-    number_conv_outputscreen();   // now the ONLY call
+    number_conv_outputscreen();  
     return;
 }
-
-    // Save history data log cleanly
     Num_logs_input();
 }
 
-void bitwise_ope_input(void)
+void bitwise_ope_input()
 {
-    // Keeping structural signature intact for your future Bitwise integrations
-}
+	    switch(choice1)
+            {
+                case 1:
+                    AND();
+                    break;
+
+                case 2:
+                    OR();
+                    break;
+
+                case 3:
+                    NOT();
+                    break;
+
+                case 4:
+                    XOR();
+                    break;
+
+                case 5:
+                    XNOR();
+                    break;
+
+                case 6:
+                    NAND();
+                    break;
+
+                case 7:
+                    Left_Shift();
+                    break;
+
+                case 8:
+                    Right_Shift();
+                    break;
+
+                case 9:
+                    Count_Set_Bits();
+                    break;
+            }
+
+    Bit_logs_input(); 
+
+    while(IsKeyDown(KEY_ENTER))
+    {
+        BeginDrawing();
+        EndDrawing();
+    }
+            return;
+        }

@@ -13,28 +13,6 @@ void updateTime(void)
              "%A, %d %B %Y  %I:%M:%S %p", t);
 }
 
-void clear_screen()
-{
-#if _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
-}
-
-void clear_buffer()
-{
-    int ch;
-
-    while(1)
-    {
-        ch = getchar();
-
-        if(ch == '\n' || ch == EOF)
-            break;
-    }
-}
-
 void remove_spaces(char source[], char destination[])
 {
     int i = 0;

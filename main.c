@@ -25,7 +25,7 @@ int main()
                 break;
 
             case 2:
-                //bitwise_ope_input();
+                bitwise_ope_interface();
                 break;
 
             case 3:
@@ -33,7 +33,7 @@ int main()
                 break;
 
             case 4:
-                Bit_logs_output();
+			 	bitwise_logs_screen();
                 break;
 
             case 5:

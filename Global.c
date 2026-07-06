@@ -20,8 +20,20 @@ unsigned int result= 0;
 unsigned int num1= 0;
 unsigned int num2= 0;
 unsigned int back=0;
-unsigned int temp;
+char number1[64];
+char number2[64];
+char shiftText[16];
+int letterCount1 = 0;
+int letterCount2 = 0;
+int letterCountShift = 0;
+int key;
 
-
+int activeBox = 1;
+int y;
+int scroll = 0;
+int minScroll = 0;
+char temp[32];
+int letterCount = 0;
+int key;
 int count= 0;
 int shift= 0;

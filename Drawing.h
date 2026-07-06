@@ -9,9 +9,9 @@ void number_conv_inputscreen(void);
 void number_conv_outputscreen(void);
 void number_logs_screen(void);
 
-void bitwise_ope_inputbase(void);
-void bitwise_ope_outputbase(void);
+void bitwise_ope_interface(void);
 void bitwise_ope_inputscreen(void);
 void bitwise_ope_outputscreen(void);
+void bitwise_logs_screen(void);
 
 #endif

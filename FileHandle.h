@@ -32,8 +32,6 @@ typedef struct
 } BitLog;
 
 void Num_logs_input(void);
-void Num_logs_output(void);
 void Bit_logs_input(void);
-void Bit_logs_output(void);
 
 #endif

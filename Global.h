@@ -6,17 +6,17 @@ extern int output_choice;
 extern int choice;
 extern int choice1;
 
-extern char number[64];
+extern char number[100];
 extern char currentTime[64];
 
-extern long result_dec;
-extern long result_oct;
-extern long result_hexa;
+extern long long result_dec;
+extern long long result_oct;
+extern long long  result_hexa;
 
 extern int invalid;
 
-extern char result_bin[65];
-extern char clean[65];
+extern char result_bin[100];
+extern char clean[100];
 
 extern unsigned int result;
 extern unsigned int back;

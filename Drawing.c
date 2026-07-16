@@ -344,7 +344,11 @@ void number_conv_inputscreen(void)
 
     Rectangle btnBack = {BACK_X, BACK_Y, BACK_W, BACK_H};
 
-    number[0] = '\0';
+	letterCount = 0;
+	invalid = 0;
+	number[0] = '\0';
+
+	int cursorPos = 0;
 
     while (!WindowShouldClose())
     {
@@ -356,23 +360,52 @@ void number_conv_inputscreen(void)
         {
             if (letterCount < 63 && key >= 32 && key <= 126)
             {
-                number[letterCount] = (char)key;
+                for (int i = letterCount; i > cursorPos; i--)
+                    number[i] = number[i - 1];
+
+                number[cursorPos] = (char)key;
                 letterCount++;
+                cursorPos++;
                 number[letterCount] = '\0';
             }
         }
-
-        if (IsKeyPressed(KEY_BACKSPACE) && letterCount > 0)
+		
+        if (IsKeyPressed(KEY_BACKSPACE) && cursorPos > 0)
         {
+            for (int i = cursorPos - 1; i < letterCount - 1; i++)
+                number[i] = number[i + 1];
+
+            letterCount--;
+            cursorPos--;
+            number[letterCount] = '\0';
+        }
+
+        if (IsKeyPressed(KEY_DELETE) && cursorPos < letterCount)
+        {
+            for (int i = cursorPos; i < letterCount - 1; i++)
+                number[i] = number[i + 1];
+
             letterCount--;
             number[letterCount] = '\0';
         }
 
-        if (IsKeyPressed(KEY_ESCAPE))
-        {
-            choice = 0;
-            return;
-        }
+        if (IsKeyPressed(KEY_LEFT) && cursorPos > 0)
+            cursorPos--;
+
+        if (IsKeyPressed(KEY_RIGHT) && cursorPos < letterCount)
+            cursorPos++;
+
+		if (IsKeyPressed(KEY_ESCAPE))
+		{
+		    while (IsKeyDown(KEY_ESCAPE))
+		    {
+		        BeginDrawing();
+		        EndDrawing();
+		    }
+		
+		    choice = 0;
+		    return;
+		}
 
         if (CheckCollisionPointRec(mouse, btnBack) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
@@ -381,48 +414,46 @@ void number_conv_inputscreen(void)
         }
 
         if (IsKeyPressed(KEY_ENTER))
-        {
-            invalid = 0;
-
-            switch (input_choice)
-            {
-                case 1:
-                    if (!binaryinput_check(number))
-                        invalid = 1;
-                    break;
-
-                case 2:
-                    if (!decimalinput_check(number))
-                        invalid = 1;
-                    break;
-
-                case 3:
-                    if (!octalinput_check(number))
-                        invalid = 1;
-                    break;
-
-                case 4:
-                    if (!hexainput_check(number))
-                        invalid = 1;
-                    break;
-            }
-
-			if (!invalid)
-			{
-			    num_conv_input();
-				Num_logs_input();
-			    
-			    while (IsKeyDown(KEY_ENTER))
-			    {
-			        BeginDrawing();
-			        EndDrawing();
-			    }
-			
-			    number_conv_outputscreen();
-			    return;
-			}
-        }
-
+		{
+		    invalid = 0;
+		
+		    switch (input_choice)
+		    {
+		        case 1:
+		            if (!binaryinput_check(number))
+		                invalid = 1;
+		            break;
+		
+		        case 2:
+		            if (!decimalinput_check(number))
+		                invalid = 1;
+		            break;
+		
+		        case 3:
+		            if (!octalinput_check(number))
+		                invalid = 1;
+		            break;
+		
+		        case 4:
+		            if (!hexainput_check(number))
+		                invalid = 1;
+		            break;
+		    }
+		
+		    if (!invalid)
+		    {
+		        num_conv_input();
+		        Num_logs_input();
+		
+		        while (IsKeyDown(KEY_ENTER))
+		        {
+		            BeginDrawing();
+		            EndDrawing();
+		        }
+		
+		        number_conv_outputscreen();
+		    }
+		}
         BeginDrawing();
         ClearBackground(BLACK);
 
@@ -494,11 +525,27 @@ void number_conv_inputscreen(void)
 					BOX_H, 
 					WHITE);
 
-        DrawText(number,
-                 BOX_X + 15,
-                 INPUT_BOX_Y + 20,
-                 TEXT_SIZE,
-                 WHITE);
+		{
+		    int start = 0;
+		    while (MeasureText(number + start, TEXT_SIZE) > BOX_W - 30 && start < cursorPos)
+		        start++;
+
+		    DrawText(number + start,
+		        BOX_X + 15,
+		        INPUT_BOX_Y + 20,
+		        TEXT_SIZE,
+		        WHITE);
+
+		    if (((int)(GetTime() * 2) % 2) == 0)
+		    {
+		        char saved = number[cursorPos];
+		        number[cursorPos] = '\0';
+		        int cursorX = BOX_X + 15 + MeasureText(number + start, TEXT_SIZE);
+		        number[cursorPos] = saved;
+
+		        DrawRectangle(cursorX, INPUT_BOX_Y + 15, 3, TEXT_SIZE, WHITE);
+		    }
+		}
 
         DrawRectangleRec(btnBack,
             CheckCollisionPointRec(mouse, btnBack) ? ORANGE : RED);
@@ -525,9 +572,9 @@ void number_conv_inputscreen(void)
                      22,
                      GRAY);
         }
-
-        EndDrawing();
-    }
+		EndDrawing();
+	}
+	
 }
 
 void number_conv_outputscreen(void)
@@ -554,7 +601,7 @@ void number_conv_outputscreen(void)
 		
 		if (IsKeyPressed(KEY_ENTER))
 		{
-		    while (IsKeyDown(KEY_ENTER))
+			if(IsKeyReleased(KEY_ENTER))
 		    {
 		        BeginDrawing();
 		        EndDrawing();
@@ -650,7 +697,7 @@ void number_conv_outputscreen(void)
                 case 2:
                 {
                     char temp[50];
-                    sprintf(temp, "%ld", result_dec);
+                    sprintf(temp, "%lld", result_dec);
                     DrawText(temp, BOX_X + 15, OUTPUT_BOX_Y + 20, TEXT_SIZE, WHITE);
                     break;
                 }
@@ -658,7 +705,7 @@ void number_conv_outputscreen(void)
                 case 3:
                 {
                     char temp[50];
-                    sprintf(temp, "%lo", result_oct);
+                    sprintf(temp, "%llo", result_oct);
                     DrawText(temp, BOX_X + 15, OUTPUT_BOX_Y + 20, TEXT_SIZE, WHITE);
                     break;
                 }
@@ -666,7 +713,7 @@ void number_conv_outputscreen(void)
                 case 4:
                 {
                     char temp[50];
-                    sprintf(temp, "%lX", result_hexa);
+                    sprintf(temp, "%llX", result_hexa);
                     DrawText(temp, BOX_X + 15, OUTPUT_BOX_Y + 20, TEXT_SIZE, WHITE);
                     break;
                 }
@@ -1126,6 +1173,17 @@ void bitwise_ope_interface(void)
 
 void bitwise_ope_inputscreen(void)
 {
+	letterCount1=0;
+	letterCount2=0;
+	letterCountShift=0;
+	activeBox=1;
+
+	int cursorPos1 = 0;
+	int cursorPos2 = 0;
+	int cursorPosShift = 0;
+	
+	Vector2 mouse = GetMousePosition();
+	
     Rectangle box1 = {BOX_X, INPUT_BOX_Y, BOX_W, BOX_H};
     Rectangle box2 = {BOX_X, INPUT_BOX_Y + 120, BOX_W, BOX_H};
     Rectangle boxShift = {BOX_X, INPUT_BOX_Y + 120, BOX_W, BOX_H};
@@ -1143,38 +1201,70 @@ void bitwise_ope_inputscreen(void)
         Vector2 mouse = GetMousePosition();
 
         if(CheckCollisionPointRec(mouse, box1) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        {
             activeBox = 1;
+            cursorPos1 = letterCount1;
+        }
 
         if((choice1 != 3) && (choice1 != 9))
         {
             if(CheckCollisionPointRec(mouse, box2) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+            {
                 activeBox = 2;
+                cursorPos2 = letterCount2;
+            }
         }
 
         if((choice1 == 7) || (choice1 == 8))
         {
             if(CheckCollisionPointRec(mouse, boxShift) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+            {
                 activeBox = 2;
+                cursorPosShift = letterCountShift;
+            }
         }
 		if(CheckCollisionPointRec(mouse, btnBack) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 		{
 		    return;   // back out to bitwise_ope_interface()
 		}
+		
+		if(IsKeyPressed(KEY_ESCAPE))
+		{
+		    return;
+		}
+		
         if(IsKeyPressed(KEY_TAB))
         {
             if(choice1 == 3 || choice1 == 9)
+            {
                 activeBox = 1;
+                cursorPos1 = letterCount1;
+            }
             else
+            {
                 activeBox = (activeBox == 1) ? 2 : 1;
-        }
 
+                if(activeBox == 1)
+                    cursorPos1 = letterCount1;
+                else if(choice1 == 7 || choice1 == 8)
+                    cursorPosShift = letterCountShift;
+                else
+                    cursorPos2 = letterCount2;
+            }
+        }
+		
         while((key = GetCharPressed()) > 0)
         {
             if(key >= '0' && key <= '9')
             {
                 if(activeBox == 1 && letterCount1 < 63)
                 {
-                    number1[letterCount1++] = (char)key;
+                    for(int i = letterCount1; i > cursorPos1; i--)
+                        number1[i] = number1[i - 1];
+
+                    number1[cursorPos1] = (char)key;
+                    letterCount1++;
+                    cursorPos1++;
                     number1[letterCount1] = '\0';
                 }
 
@@ -1184,7 +1274,12 @@ void bitwise_ope_inputscreen(void)
                     {
                         if(letterCountShift < 15)
                         {
-                            shiftText[letterCountShift++] = (char)key;
+                            for(int i = letterCountShift; i > cursorPosShift; i--)
+                                shiftText[i] = shiftText[i - 1];
+
+                            shiftText[cursorPosShift] = (char)key;
+                            letterCountShift++;
+                            cursorPosShift++;
                             shiftText[letterCountShift] = '\0';
                         }
                     }
@@ -1192,7 +1287,12 @@ void bitwise_ope_inputscreen(void)
                     {
                         if(letterCount2 < 63)
                         {
-                            number2[letterCount2++] = (char)key;
+                            for(int i = letterCount2; i > cursorPos2; i--)
+                                number2[i] = number2[i - 1];
+
+                            number2[cursorPos2] = (char)key;
+                            letterCount2++;
+                            cursorPos2++;
                             number2[letterCount2] = '\0';
                         }
                     }
@@ -1202,8 +1302,52 @@ void bitwise_ope_inputscreen(void)
 
         if(IsKeyPressed(KEY_BACKSPACE))
         {
-            if(activeBox == 1 && letterCount1 > 0)
+            if(activeBox == 1 && cursorPos1 > 0)
             {
+                for(int i = cursorPos1 - 1; i < letterCount1 - 1; i++)
+                    number1[i] = number1[i + 1];
+
+                letterCount1--;
+                cursorPos1--;
+                number1[letterCount1] = '\0';
+            }
+
+            if(activeBox == 2)
+            {
+                if(choice1 == 7 || choice1 == 8)
+                {
+                    if(cursorPosShift > 0)
+                    {
+                        for(int i = cursorPosShift - 1; i < letterCountShift - 1; i++)
+                            shiftText[i] = shiftText[i + 1];
+
+                        letterCountShift--;
+                        cursorPosShift--;
+                        shiftText[letterCountShift] = '\0';
+                    }
+                }
+                else
+                {
+                    if(cursorPos2 > 0)
+                    {
+                        for(int i = cursorPos2 - 1; i < letterCount2 - 1; i++)
+                            number2[i] = number2[i + 1];
+
+                        letterCount2--;
+                        cursorPos2--;
+                        number2[letterCount2] = '\0';
+                    }
+                }
+            }
+		}
+
+        if(IsKeyPressed(KEY_DELETE))
+        {
+            if(activeBox == 1 && cursorPos1 < letterCount1)
+            {
+                for(int i = cursorPos1; i < letterCount1 - 1; i++)
+                    number1[i] = number1[i + 1];
+
                 letterCount1--;
                 number1[letterCount1] = '\0';
             }
@@ -1212,55 +1356,122 @@ void bitwise_ope_inputscreen(void)
             {
                 if(choice1 == 7 || choice1 == 8)
                 {
-                    if(letterCountShift > 0)
+                    if(cursorPosShift < letterCountShift)
                     {
+                        for(int i = cursorPosShift; i < letterCountShift - 1; i++)
+                            shiftText[i] = shiftText[i + 1];
+
                         letterCountShift--;
                         shiftText[letterCountShift] = '\0';
                     }
                 }
                 else
                 {
-                    if(letterCount2 > 0)
+                    if(cursorPos2 < letterCount2)
                     {
+                        for(int i = cursorPos2; i < letterCount2 - 1; i++)
+                            number2[i] = number2[i + 1];
+
                         letterCount2--;
                         number2[letterCount2] = '\0';
                     }
                 }
             }
-        
-		}
+        }
+
+        if(IsKeyPressed(KEY_LEFT))
+        {
+            if(activeBox == 1 && cursorPos1 > 0)
+                cursorPos1--;
+            else if(activeBox == 2)
+            {
+                if(choice1 == 7 || choice1 == 8)
+                {
+                    if(cursorPosShift > 0) cursorPosShift--;
+                }
+                else if(cursorPos2 > 0) cursorPos2--;
+            }
+        }
+
+        if(IsKeyPressed(KEY_RIGHT))
+        {
+            if(activeBox == 1 && cursorPos1 < letterCount1)
+                cursorPos1++;
+            else if(activeBox == 2)
+            {
+                if(choice1 == 7 || choice1 == 8)
+                {
+                    if(cursorPosShift < letterCountShift) cursorPosShift++;
+                }
+                else if(cursorPos2 < letterCount2) cursorPos2++;
+            }
+        }
 		
 		if(IsKeyPressed(KEY_ENTER))
-		{
-		    if(choice1 == 3 || choice1 == 9)
-		    {
-		        // Single-input ops: one Enter is enough
-		        num1 = (unsigned int)strtoul(number1, NULL, 10);
-		
-		        bitwise_ope_input();
-		        bitwise_ope_outputscreen();
-		        return;
-		    }
-		    else if(activeBox == 1)
-		    {
-		        // First Enter: just move to the second box, don't submit yet
-		        activeBox = 2;
-		    }
-		    else
-		    {
-		        // Second Enter (activeBox == 2): now submit
-		        num1 = (unsigned int)strtoul(number1, NULL, 10);
-		
-		        if(choice1 == 7 || choice1 == 8)
-		            shift = atoi(shiftText);
-		        else
-		            num2 = (unsigned int)strtoul(number2, NULL, 10);
-		
-		        bitwise_ope_input();
-		        bitwise_ope_outputscreen();
-		        return;
-		    }
-		}
+			{
+			    invalid = 0;
+			
+			    if(choice1 == 3 || choice1 == 9)
+			    {
+			        if(strlen(number1) == 0)
+			        {
+			            invalid = 1;
+			        }
+			        else
+			        {
+			            num1 = (unsigned int)strtoul(number1, NULL, 10);
+			
+			            bitwise_ope_input();
+			            bitwise_ope_outputscreen();
+			        }
+			    }
+			    else if(activeBox == 1)
+			    {
+			        if(strlen(number1) == 0)
+			        {
+			            invalid = 1;
+			        }
+			        else
+			        {
+			            activeBox = 2;
+			            cursorPosShift = letterCountShift;
+			            cursorPos2 = letterCount2;
+			        }
+			    }
+			    else
+			    {
+			        if(choice1 == 7 || choice1 == 8)
+			        {
+			            if(strlen(shiftText) == 0)
+			            {
+			                invalid = 1;
+			            }
+			            else
+			            {
+			                num1 = (unsigned int)strtoul(number1, NULL, 10);
+			                shift = atoi(shiftText);
+			
+			                bitwise_ope_input();
+			                bitwise_ope_outputscreen();
+			            }
+			        }
+			        else
+			        {
+			            if(strlen(number2) == 0)
+			            {
+			                invalid = 1;
+			            }
+			            else
+			            {
+			                num1 = (unsigned int)strtoul(number1, NULL, 10);
+			                num2 = (unsigned int)strtoul(number2, NULL, 10);
+			
+			                bitwise_ope_input();
+			                bitwise_ope_outputscreen();
+			            }
+			        }
+			    }
+			}
 		
 		BeginDrawing();
 		ClearBackground(BLACK);
@@ -1328,11 +1539,27 @@ void bitwise_ope_inputscreen(void)
             activeBox == 1 ? DARKBLUE : DARKGRAY);
         DrawRectangleLinesEx(box1, 2, WHITE);
 
-        DrawText(number1,
-            BOX_X + 15,
-            INPUT_BOX_Y + 20,
-            TEXT_SIZE,
-            WHITE);
+        {
+            int start1 = 0;
+            while(MeasureText(number1 + start1, TEXT_SIZE) > BOX_W - 30 && start1 < cursorPos1)
+                start1++;
+
+            DrawText(number1 + start1,
+                BOX_X + 15,
+                INPUT_BOX_Y + 20,
+                TEXT_SIZE,
+                WHITE);
+
+            if(activeBox == 1 && ((int)(GetTime() * 2) % 2) == 0)
+            {
+                char saved = number1[cursorPos1];
+                number1[cursorPos1] = '\0';
+                int cursorX = BOX_X + 15 + MeasureText(number1 + start1, TEXT_SIZE);
+                number1[cursorPos1] = saved;
+
+                DrawRectangle(cursorX, INPUT_BOX_Y + 15, 3, TEXT_SIZE, WHITE);
+            }
+        }
 
 		if(choice1 == 3 || choice1 == 9)
 		{
@@ -1355,11 +1582,25 @@ void bitwise_ope_inputscreen(void)
                 activeBox == 2 ? DARKBLUE : DARKGRAY);
             DrawRectangleLinesEx(boxShift, 2, WHITE);
 
-            DrawText(shiftText,
+            int startS = 0;
+            while(MeasureText(shiftText + startS, TEXT_SIZE) > BOX_W - 30 && startS < cursorPosShift)
+                startS++;
+
+            DrawText(shiftText + startS,
                 BOX_X + 15,
                 INPUT_BOX_Y + 140,
                 TEXT_SIZE,
                 WHITE);
+
+            if(activeBox == 2 && ((int)(GetTime() * 2) % 2) == 0)
+            {
+                char saved = shiftText[cursorPosShift];
+                shiftText[cursorPosShift] = '\0';
+                int cursorX = BOX_X + 15 + MeasureText(shiftText + startS, TEXT_SIZE);
+                shiftText[cursorPosShift] = saved;
+
+                DrawRectangle(cursorX, INPUT_BOX_Y + 135, 3, TEXT_SIZE, WHITE);
+            }
         }
         else
         {
@@ -1373,11 +1614,25 @@ void bitwise_ope_inputscreen(void)
                 activeBox == 2 ? DARKBLUE : DARKGRAY);
             DrawRectangleLinesEx(box2, 2, WHITE);
 
-            DrawText(number2,
+            int start2 = 0;
+            while(MeasureText(number2 + start2, TEXT_SIZE) > BOX_W - 30 && start2 < cursorPos2)
+                start2++;
+
+            DrawText(number2 + start2,
                 BOX_X + 15,
                 INPUT_BOX_Y + 140,
                 TEXT_SIZE,
                 WHITE);
+
+            if(activeBox == 2 && ((int)(GetTime() * 2) % 2) == 0)
+            {
+                char saved = number2[cursorPos2];
+                number2[cursorPos2] = '\0';
+                int cursorX = BOX_X + 15 + MeasureText(number2 + start2, TEXT_SIZE);
+                number2[cursorPos2] = saved;
+
+                DrawRectangle(cursorX, INPUT_BOX_Y + 135, 3, TEXT_SIZE, WHITE);
+            }
         }
 
         DrawRectangleRec(btnBack,
@@ -1401,6 +1656,14 @@ void bitwise_ope_inputscreen(void)
             22,
             GRAY);
 
+		if(invalid)
+		{
+		    DrawText("PLEASE ENTER ALL REQUIRED VALUES",
+		             (SCREEN_W - MeasureText("PLEASE ENTER ALL REQUIRED VALUES", 24)) / 2,
+		             OUTPUT_BOX_Y + 145,
+		             24,
+		             RED);
+		}
         EndDrawing();
     }
 }

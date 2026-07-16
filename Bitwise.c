@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 #include "Global.h"
 #include "utility.h"
 #include "bitwise.h"
@@ -49,12 +48,12 @@ void Right_Shift(void)
 void Count_Set_Bits(void)
 {
     count = 0;
-    temp = num1;
+    int temp1 = num1;
 
-    while(temp)
+    while(temp1)
     {
-        count += temp & 1;
-        temp >>= 1;
+        count += temp1 & 1;
+        temp1 >>= 1;
     }
 
     result = count;

@@ -738,14 +738,21 @@ void number_logs_screen(void) {
 		         95,
 		         22,
 		         GRAY);
-			
-		DrawText(TextFormat(currentUser.isAdmin ?
-		                    "Viewing: ALL ACCOUNTS (Admin)" :
-		                    "			Viewing: %s",currentUser.username),
-		         (SCREEN_W - MeasureText("Viewing: ALL ACCOUNTS (Admin)", 22)) / 2,
-		         130,
-		         22,
-		         SKYBLUE);
+
+		{
+			char viewingText[80];
+
+			if(currentUser.isAdmin)
+				strcpy(viewingText, "Viewing: ALL ACCOUNTS (Admin)");
+			else
+				sprintf(viewingText, "Viewing: %s", currentUser.username);
+
+			DrawText(viewingText,
+			         (SCREEN_W - MeasureText(viewingText, 22)) / 2,
+			         130,
+			         22,
+			         SKYBLUE);
+		}
 
 		DrawLine(60,170,1860,170,WHITE);
 
@@ -1771,14 +1778,21 @@ void bitwise_logs_screen(void) {
 		         95,
 		         22,
 		         GRAY);
-				
-		DrawText(TextFormat(currentUser.isAdmin ?
-		                    "Viewing: ALL ACCOUNTS (Admin)" :
-		                    "			Viewing: %s",currentUser.username),
-		         (SCREEN_W - MeasureText("Viewing: ALL ACCOUNTS (Admin)", 22)) / 2,
-		         130,
-		         22,
-		         SKYBLUE);
+
+		{
+			char viewingText[80];
+
+			if(currentUser.isAdmin)
+				strcpy(viewingText, "Viewing: ALL ACCOUNTS (Admin)");
+			else
+				sprintf(viewingText, "Viewing: %s", currentUser.username);
+
+			DrawText(viewingText,
+			         (SCREEN_W - MeasureText(viewingText, 22)) / 2,
+			         130,
+			         22,
+			         SKYBLUE);
+		}
 
 		DrawLine(60,170,1860,170,WHITE);
 
@@ -2595,6 +2609,7 @@ void forgot_password_screen(void) {
 // selected (defaults to the admin's own account).
 static void admin_account_settings_screen(void) {
 	static User userList[MAX_USERS];
+	static bool deleteConfirm = false;
 
 	int userCount = GetAllUsers(userList, MAX_USERS);
 
@@ -2689,6 +2704,7 @@ static void admin_account_settings_screen(void) {
 
 				settingsSuccess = false;
 				settingsError = false;
+				deleteConfirm = false;
 
 				newUsernameCount = 0;
 				newPasswordCount = 0;
@@ -2722,7 +2738,9 @@ static void admin_account_settings_screen(void) {
 	Rectangle usernameBtn = {editorX, card.y + 360, editorW, 50};
 	Rectangle passwordBtn = {editorX, card.y + 430, editorW, 50};
 
-	Rectangle selfBtn     = {editorX, card.y + 510, editorW, 45};
+	Rectangle deleteBtn   = {editorX, card.y + 500, editorW, 50};
+
+	Rectangle selfBtn     = {editorX, card.y + 570, editorW, 45};
 
 	Rectangle logoutBtn   = {editorX, card.y + card.height - 130 - 40, editorW, 50};
 	Rectangle backBtn     = {editorX, card.y + card.height - 130 + 20, editorW, 45};
@@ -2768,6 +2786,49 @@ static void admin_account_settings_screen(void) {
 		}
 	}
 
+	// Delete Account (the SELECTED account)
+
+	if(HoverButton(deleteBtn,
+	               deleteConfirm ? "CLICK AGAIN TO CONFIRM" : "DELETE ACCOUNT",
+	               deleteConfirm ? RED : MAROON,
+	               RED,
+	               WHITE)) {
+		if(deleteConfirm) {
+			bool deletingSelf = strcmp(targetUsername, currentUser.username) == 0;
+
+			if(DeleteAccount((char *)targetUsername)) {
+				deleteConfirm = false;
+				editingUsername[0] = '\0';
+
+				newUsernameCount = 0;
+				newPasswordCount = 0;
+				newUsername[0] = '\0';
+				newPassword[0] = '\0';
+
+				if(deletingSelf) {
+					loggedIn = 0;
+
+					memset(&currentUser,0,sizeof(User));
+
+					accountListScroll = 0;
+
+					currentScreen = LOGIN_SCREEN;
+					return;
+				}
+
+				settingsSuccess = true;
+				settingsError = false;
+			} else {
+				deleteConfirm = false;
+
+				settingsError = true;
+				settingsSuccess = false;
+			}
+		} else {
+			deleteConfirm = true;
+		}
+	}
+
 	// Jump back to editing your own account
 
 	if(HoverButton(selfBtn, "EDIT MY OWN ACCOUNT", GRAY, RED, WHITE)) {
@@ -2775,6 +2836,7 @@ static void admin_account_settings_screen(void) {
 
 		settingsSuccess = false;
 		settingsError = false;
+		deleteConfirm = false;
 
 		newUsernameCount = 0;
 		newPasswordCount = 0;
@@ -2791,6 +2853,7 @@ static void admin_account_settings_screen(void) {
 
 		editingUsername[0] = '\0';
 		accountListScroll = 0;
+		deleteConfirm = false;
 
 		currentScreen = LOGIN_SCREEN;
 	}
@@ -2800,6 +2863,7 @@ static void admin_account_settings_screen(void) {
 	if(HoverButton(backBtn, "BACK", GRAY, RED, WHITE)) {
 		settingsSuccess = false;
 		settingsError = false;
+		deleteConfirm = false;
 
 		editingUsername[0] = '\0';
 		accountListScroll = 0;
@@ -2810,7 +2874,7 @@ static void admin_account_settings_screen(void) {
 	if(settingsSuccess) {
 		DrawText("Changes Saved Successfully!",
 		         editorX,
-		         card.y + 565,
+		         card.y + 625,
 		         22,
 		         GREEN);
 	}
@@ -2818,7 +2882,7 @@ static void admin_account_settings_screen(void) {
 	if(settingsError) {
 		DrawText("Operation Failed!",
 		         editorX,
-		         card.y + 565,
+		         card.y + 625,
 		         22,
 		         RED);
 	}

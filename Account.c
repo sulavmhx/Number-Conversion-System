@@ -320,6 +320,58 @@ int ChangeUsername(char oldUsername[], char newUsername[])
     return found;
 }
 
+int DeleteAccount(char username[])
+{
+    FILE *fp;
+    FILE *tempFile;
+
+    User temp;
+
+    int found = 0;
+
+    fp = fopen(USER_FILE, "r");
+
+    if (fp == NULL)
+    {
+        return 0;
+    }
+
+    tempFile = fopen("temp.txt", "w");
+
+    while (fscanf(fp,
+                  "%s %s %s %s %d",
+                  temp.username,
+                  temp.password,
+                  temp.question,
+                  temp.answer,
+                  &temp.isAdmin) != EOF)
+    {
+        // Skip writing this user -- that's the "delete"
+        if (strcmp(temp.username, username) == 0)
+        {
+            found = 1;
+            continue;
+        }
+
+        fprintf(tempFile,
+                "%s %s %s %s %d\n",
+                temp.username,
+                temp.password,
+                temp.question,
+                temp.answer,
+                temp.isAdmin);
+    }
+
+    fclose(fp);
+    fclose(tempFile);
+
+    remove(USER_FILE);
+
+    rename("temp.txt", USER_FILE);
+
+    return found;
+}
+
 int ForgotPassword(char username[],char answer[],char newPassword[])
 {
     FILE *fp;

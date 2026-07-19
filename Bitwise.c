@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 #include "Global.h"
-#include "utility.h"
-#include "bitwise.h"
+#include "Utility.h"
+#include "Bitwise.h"
 #include "raylib.h"
 
 void AND(void)

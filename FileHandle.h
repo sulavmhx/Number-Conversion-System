@@ -2,6 +2,7 @@
 #define FILEHANDLE_H
 
 #include <time.h>
+#include "Account.h"
 
 #define NUM_LOG_FILE "NumConvLog.txt"
 #define BIT_LOG_FILE "BitwiseLog.txt"
@@ -13,6 +14,8 @@ typedef struct
 
     char input_number[64];
     char output_number[64];
+
+    char username[MAX_LEN];
 
     time_t used_time;
 
@@ -26,6 +29,8 @@ typedef struct
     unsigned int second_number;
 
     unsigned int result;
+
+    char username[MAX_LEN];
 
     time_t used_time;
 

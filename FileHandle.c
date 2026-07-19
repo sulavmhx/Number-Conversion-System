@@ -26,6 +26,7 @@ void Num_logs_input()
     log.output_base = output_choice;
 
     strcpy(log.input_number, number);
+    strcpy(log.username, currentUser.username);
 
     switch(output_choice)
 {
@@ -77,6 +78,8 @@ void Bit_logs_input()
     log.second_number = num2;
 
     log.result = result;
+
+    strcpy(log.username, currentUser.username);
 
     log.used_time = time(NULL);
 

@@ -63,18 +63,12 @@ void num_conv_input(void)
             hexa_decimal();
             break;
     }
-    
-	if(invalid)
-{
-    int letterCount = 0;
-    number[0] = '\0';
-}
-else
-{
-    number_conv_outputscreen();  
-    return;
-}
-    Num_logs_input();
+
+    // Conversion done. The caller (Drawing.c) is responsible for
+    // logging and for showing number_conv_outputscreen(); doing
+    // either of those here as well caused every valid conversion to
+    // be logged and displayed twice, and every overflow/invalid
+    // result to be logged with garbage data.
 }
 
 void bitwise_ope_input()

@@ -15,13 +15,9 @@ typedef struct
 void InitializeAdmin(void);
 int RegisterUser(User user);
 int LoginUser(char username[], char password[]);
-int ForgotPassword(char username[],
-                   char answer[],
-                   char newPassword[]);
-int ChangePassword(char username[],
-                   char newPassword[]);
-int ChangeUsername(char oldUsername[],
-                   char newUsername[]);
+int ForgotPassword(char username[],char answer[],char newPassword[]);
+int ChangePassword(char username[],char newPassword[]);
+int ChangeUsername(char oldUsername[],char newUsername[]);
 int DeleteAccount(char username[]);
 int UsernameExists(char username[]);
 int GetSecurityQuestion(char username[], char outQuestion[]);

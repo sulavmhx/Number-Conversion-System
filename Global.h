@@ -5,9 +5,9 @@
 #include "raylib.h"
 #include "Account.h"
 
-//================================================
+
 // Number Converter
-//================================================
+
 
 extern int input_choice;
 extern int output_choice;
@@ -50,9 +50,9 @@ extern int shift;
 
 extern char temp[32];
 
-//================================================
+
 // Account System
-//================================================
+
 
 extern User currentUser;
 
@@ -112,9 +112,8 @@ extern int newPasswordCount;
 extern bool settingsSuccess;
 extern bool settingsError;
 
-//================================================
 // Admin - Account Settings (manage all accounts)
-//================================================
+
 
 extern char editingUsername[MAX_LEN];   // "" = admin is editing their own account
 extern int  accountListScroll;

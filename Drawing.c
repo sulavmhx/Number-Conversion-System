@@ -17,17 +17,11 @@ void DrawMenuBackdrop(void) {
 
 	ClearBackground(BLACK);
 
-	DrawText("NUMBER CONVERSION SYSTEM",
-	         (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2,
-	         TITLE_Y, TITLE_SIZE, GREEN);
+	DrawText("NUMBER CONVERSION SYSTEM", (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2, TITLE_Y, TITLE_SIZE, GREEN);
 
-	DrawText("& BITWISE TOOLS",
-	         (SCREEN_W - MeasureText("& BITWISE TOOLS", TITLE_SIZE)) / 2,
-	         TITLE_Y + 65, TITLE_SIZE, GREEN);
+	DrawText("& BITWISE TOOLS", (SCREEN_W - MeasureText("& BITWISE TOOLS", TITLE_SIZE)) / 2, TITLE_Y + 65, TITLE_SIZE, GREEN);
 
-	DrawText(currentTime,
-	         (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2,
-	         TITLE_Y + 125, SUBTITLE_SIZE, GRAY);
+	DrawText(currentTime, (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2, TITLE_Y + 125, SUBTITLE_SIZE, GRAY);
 
 	Rectangle btnNumConv = {BTN_X, BTN1_Y, BTN_W, BTN_H};
 	Rectangle btnBitwise = {BTN_X, BTN2_Y, BTN_W, BTN_H};
@@ -41,29 +35,17 @@ void DrawMenuBackdrop(void) {
 	DrawRectangleRec(btnBitLogs, DARKBLUE);
 	DrawRectangleRec(btnExit, MAROON);
 
-	DrawText("Number Conversion",
-	         BTN_X + (BTN_W - MeasureText("Number Conversion", BUTTON_TEXT_SIZE)) / 2,
-	         BTN1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+	DrawText("Number Conversion", BTN_X + (BTN_W - MeasureText("Number Conversion", BUTTON_TEXT_SIZE)) / 2, BTN1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-	DrawText("Bitwise Tools",
-	         BTN_X + (BTN_W - MeasureText("Bitwise Tools", BUTTON_TEXT_SIZE)) / 2,
-	         BTN2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+	DrawText("Bitwise Tools", BTN_X + (BTN_W - MeasureText("Bitwise Tools", BUTTON_TEXT_SIZE)) / 2, BTN2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-	DrawText("Number Logs",
-	         BTN_X + (BTN_W - MeasureText("Number Logs", BUTTON_TEXT_SIZE)) / 2,
-	         BTN3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+	DrawText("Number Logs", BTN_X + (BTN_W - MeasureText("Number Logs", BUTTON_TEXT_SIZE)) / 2, BTN3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-	DrawText("Bitwise Logs",
-	         BTN_X + (BTN_W - MeasureText("Bitwise Logs", BUTTON_TEXT_SIZE)) / 2,
-	         BTN4_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+	DrawText("Bitwise Logs", BTN_X + (BTN_W - MeasureText("Bitwise Logs", BUTTON_TEXT_SIZE)) / 2, BTN4_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-	DrawText("Exit",
-	         BTN_X + (BTN_W - MeasureText("Exit", BUTTON_TEXT_SIZE)) / 2,
-	         BTN5_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+	DrawText("Exit", BTN_X + (BTN_W - MeasureText("Exit", BUTTON_TEXT_SIZE)) / 2, BTN5_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-	DrawText("CONTRIBUTORS: @sulavmhx, @saurav112-dot",
-	         BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2,
-	         BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+	DrawText("CONTRIBUTORS: @sulavmhx, @saurav112-dot", BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2, BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
 	// Dim the backdrop so the floating card drawn on top of it reads clearly
 	DrawRectangle(0, 0, SCREEN_W, SCREEN_H, Fade(BLACK, 0.65f));
@@ -101,17 +83,11 @@ void menu(void) {
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		DrawText("NUMBER CONVERSION SYSTEM",
-		         (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2,
-		         TITLE_Y, TITLE_SIZE, GREEN);
+		DrawText("NUMBER CONVERSION SYSTEM", (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2, TITLE_Y, TITLE_SIZE, GREEN);
 
-		DrawText("& BITWISE TOOLS",
-		         (SCREEN_W - MeasureText("& BITWISE TOOLS", TITLE_SIZE)) / 2,
-		         TITLE_Y + 65, TITLE_SIZE, GREEN);
+		DrawText("& BITWISE TOOLS", (SCREEN_W - MeasureText("& BITWISE TOOLS", TITLE_SIZE)) / 2, TITLE_Y + 65, TITLE_SIZE, GREEN);
 
-		DrawText(currentTime,
-		         (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2,
-		         TITLE_Y + 125, SUBTITLE_SIZE, GRAY);
+		DrawText(currentTime, (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2, TITLE_Y + 125, SUBTITLE_SIZE, GRAY);
 
 		DrawRectangleRec(btnNumConv, CheckCollisionPointRec(mouse, btnNumConv) ? SKYBLUE : DARKBLUE);
 		DrawRectangleRec(btnBitwise, CheckCollisionPointRec(mouse, btnBitwise) ? SKYBLUE : DARKBLUE);
@@ -119,29 +95,17 @@ void menu(void) {
 		DrawRectangleRec(btnBitLogs, CheckCollisionPointRec(mouse, btnBitLogs) ? SKYBLUE : DARKBLUE);
 		DrawRectangleRec(btnExit, CheckCollisionPointRec(mouse, btnExit) ? RED : MAROON);
 
-		DrawText("Number Conversion",
-		         BTN_X + (BTN_W - MeasureText("Number Conversion", BUTTON_TEXT_SIZE)) / 2,
-		         BTN1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Number Conversion", BTN_X + (BTN_W - MeasureText("Number Conversion", BUTTON_TEXT_SIZE)) / 2, BTN1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Bitwise Tools",
-		         BTN_X + (BTN_W - MeasureText("Bitwise Tools", BUTTON_TEXT_SIZE)) / 2,
-		         BTN2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Bitwise Tools", BTN_X + (BTN_W - MeasureText("Bitwise Tools", BUTTON_TEXT_SIZE)) / 2, BTN2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Number Logs",
-		         BTN_X + (BTN_W - MeasureText("Number Logs", BUTTON_TEXT_SIZE)) / 2,
-		         BTN3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Number Logs", BTN_X + (BTN_W - MeasureText("Number Logs", BUTTON_TEXT_SIZE)) / 2, BTN3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Bitwise Logs",
-		         BTN_X + (BTN_W - MeasureText("Bitwise Logs", BUTTON_TEXT_SIZE)) / 2,
-		         BTN4_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Bitwise Logs", BTN_X + (BTN_W - MeasureText("Bitwise Logs", BUTTON_TEXT_SIZE)) / 2, BTN4_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Exit",
-		         BTN_X + (BTN_W - MeasureText("Exit", BUTTON_TEXT_SIZE)) / 2,
-		         BTN5_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Exit", BTN_X + (BTN_W - MeasureText("Exit", BUTTON_TEXT_SIZE)) / 2, BTN5_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("CONTRIBUTORS: @sulavmhx, @saurav112-dot",
-		         BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2,
-		         BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("CONTRIBUTORS: @sulavmhx, @saurav112-dot", BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2, BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
 		DrawAccountBadge();
 
@@ -187,23 +151,13 @@ void number_conv_inputbase(void) {
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		DrawText("NUMBER CONVERSION SYSTEM",
-		         (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2,
-		         TITLE_Y, TITLE_SIZE, GREEN);
+		DrawText("NUMBER CONVERSION SYSTEM", (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2, TITLE_Y, TITLE_SIZE, GREEN);
 
-		DrawText(currentTime,
-		         (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2,
-		         SUBTITLE_Y, SUBTITLE_SIZE, GRAY);
+		DrawText(currentTime, (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2, SUBTITLE_Y, SUBTITLE_SIZE, GRAY);
 
-		DrawText("SELECT",
-		         (SCREEN_W - MeasureText("SELECT", 34)) / 2,
-		         TIME_Y, 34, LIGHTGRAY);
+		DrawText("SELECT", (SCREEN_W - MeasureText("SELECT", 34)) / 2, TIME_Y, 34, LIGHTGRAY);
 
-		DrawText("INPUT BASE",
-		         (SCREEN_W - MeasureText("INPUT BASE", 50)) / 2,
-		         TIME_Y + 50,
-		         50,
-		         YELLOW);
+		DrawText("INPUT BASE", (SCREEN_W - MeasureText("INPUT BASE", 50)) / 2, TIME_Y + 50, 50, YELLOW);
 
 		DrawRectangleRec(btnBin, CheckCollisionPointRec(mouse, btnBin) ? SKYBLUE : DARKBLUE);
 		DrawRectangleRec(btnDec, CheckCollisionPointRec(mouse, btnDec) ? SKYBLUE : DARKBLUE);
@@ -211,25 +165,15 @@ void number_conv_inputbase(void) {
 		DrawRectangleRec(btnHex, CheckCollisionPointRec(mouse, btnHex) ? SKYBLUE : DARKBLUE);
 		DrawRectangleRec(btnBack, CheckCollisionPointRec(mouse, btnBack) ? RED : MAROON);
 
-		DrawText("Binary",
-		         BTN_X + (BTN_W - MeasureText("Binary", BUTTON_TEXT_SIZE)) / 2,
-		         BASE_BTN1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Binary", BTN_X + (BTN_W - MeasureText("Binary", BUTTON_TEXT_SIZE)) / 2, BASE_BTN1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Decimal",
-		         BTN_X + (BTN_W - MeasureText("Decimal", BUTTON_TEXT_SIZE)) / 2,
-		         BASE_BTN2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Decimal", BTN_X + (BTN_W - MeasureText("Decimal", BUTTON_TEXT_SIZE)) / 2, BASE_BTN2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Octal",
-		         BTN_X + (BTN_W - MeasureText("Octal", BUTTON_TEXT_SIZE)) / 2,
-		         BASE_BTN3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Octal", BTN_X + (BTN_W - MeasureText("Octal", BUTTON_TEXT_SIZE)) / 2, BASE_BTN3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Hexadecimal",
-		         BTN_X + (BTN_W - MeasureText("Hexadecimal", BUTTON_TEXT_SIZE)) / 2,
-		         BASE_BTN4_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Hexadecimal", BTN_X + (BTN_W - MeasureText("Hexadecimal", BUTTON_TEXT_SIZE)) / 2, BASE_BTN4_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Back",
-		         BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2,
-		         BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Back", BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2, BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
 		EndDrawing();
 
@@ -275,21 +219,13 @@ void number_conv_outputbase(void) {
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		DrawText("NUMBER CONVERSION SYSTEM",
-		         (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2,
-		         TITLE_Y, TITLE_SIZE, GREEN);
+		DrawText("NUMBER CONVERSION SYSTEM", (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2, TITLE_Y, TITLE_SIZE, GREEN);
 
-		DrawText(currentTime,
-		         (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2,
-		         SUBTITLE_Y, SUBTITLE_SIZE, GRAY);
+		DrawText(currentTime, (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2, SUBTITLE_Y, SUBTITLE_SIZE, GRAY);
 
-		DrawText("SELECT",
-		         (SCREEN_W - MeasureText("SELECT", 34)) / 2,
-		         TIME_Y, 34, LIGHTGRAY);
+		DrawText("SELECT", (SCREEN_W - MeasureText("SELECT", 34)) / 2, TIME_Y, 34, LIGHTGRAY);
 
-		DrawText("OUTPUT BASE",
-		         (SCREEN_W - MeasureText("OUTPUT BASE", 50)) / 2,
-		         TIME_Y + 50, 50, YELLOW);
+		DrawText("OUTPUT BASE", (SCREEN_W - MeasureText("OUTPUT BASE", 50)) / 2, TIME_Y + 50, 50, YELLOW);
 
 		DrawRectangleRec(btnBin, CheckCollisionPointRec(mouse, btnBin) ? SKYBLUE : DARKBLUE);
 		DrawRectangleRec(btnDec, CheckCollisionPointRec(mouse, btnDec) ? SKYBLUE : DARKBLUE);
@@ -297,25 +233,15 @@ void number_conv_outputbase(void) {
 		DrawRectangleRec(btnHex, CheckCollisionPointRec(mouse, btnHex) ? SKYBLUE : DARKBLUE);
 		DrawRectangleRec(btnBack, CheckCollisionPointRec(mouse, btnBack) ? RED : MAROON);
 
-		DrawText("Binary",
-		         BTN_X + (BTN_W - MeasureText("Binary", BUTTON_TEXT_SIZE)) / 2,
-		         BASE_BTN1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Binary", BTN_X + (BTN_W - MeasureText("Binary", BUTTON_TEXT_SIZE)) / 2, BASE_BTN1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Decimal",
-		         BTN_X + (BTN_W - MeasureText("Decimal", BUTTON_TEXT_SIZE)) / 2,
-		         BASE_BTN2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Decimal", BTN_X + (BTN_W - MeasureText("Decimal", BUTTON_TEXT_SIZE)) / 2, BASE_BTN2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Octal",
-		         BTN_X + (BTN_W - MeasureText("Octal", BUTTON_TEXT_SIZE)) / 2,
-		         BASE_BTN3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Octal", BTN_X + (BTN_W - MeasureText("Octal", BUTTON_TEXT_SIZE)) / 2, BASE_BTN3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Hexadecimal",
-		         BTN_X + (BTN_W - MeasureText("Hexadecimal", BUTTON_TEXT_SIZE)) / 2,
-		         BASE_BTN4_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Hexadecimal", BTN_X + (BTN_W - MeasureText("Hexadecimal", BUTTON_TEXT_SIZE)) / 2, BASE_BTN4_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Back",
-		         BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2,
-		         BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Back", BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2, BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
 		EndDrawing();
 
@@ -437,17 +363,9 @@ void number_conv_inputscreen(void) {
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		DrawText("NUMBER CONVERSION SYSTEM",
-		         (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2,
-		         TITLE_Y,
-		         TITLE_SIZE,
-		         GREEN);
+		DrawText("NUMBER CONVERSION SYSTEM", (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2, TITLE_Y, TITLE_SIZE, GREEN);
 
-		DrawText(currentTime,
-		         (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2,
-		         SUBTITLE_Y,
-		         SUBTITLE_SIZE,
-		         GRAY);
+		DrawText(currentTime, (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2, SUBTITLE_Y, SUBTITLE_SIZE, GRAY);
 
 		DrawText("INPUT BASE :", 500, 220, TEXT_SIZE, WHITE);
 
@@ -491,28 +409,16 @@ void number_conv_inputscreen(void) {
 
 		DrawText("ENTER NUMBER", BOX_X, INPUT_BOX_Y - 40, 24, GREEN);
 
-		DrawRectangle(BOX_X,
-		              INPUT_BOX_Y,
-		              BOX_W,
-		              BOX_H,
-		              DARKGRAY);
+		DrawRectangle(BOX_X, INPUT_BOX_Y, BOX_W, BOX_H, DARKGRAY);
 
-		DrawRectangleLines(BOX_X,
-		                   INPUT_BOX_Y,
-		                   BOX_W,
-		                   BOX_H,
-		                   WHITE);
+		DrawRectangleLines(BOX_X, INPUT_BOX_Y, BOX_W, BOX_H, WHITE);
 
 		{
 			int start = 0;
 			while (MeasureText(number + start, TEXT_SIZE) > BOX_W - 30 && start < cursorPos)
 				start++;
 
-			DrawText(number + start,
-			         BOX_X + 15,
-			         INPUT_BOX_Y + 20,
-			         TEXT_SIZE,
-			         WHITE);
+			DrawText(number + start, BOX_X + 15, INPUT_BOX_Y + 20, TEXT_SIZE, WHITE);
 
 			if (((int)(GetTime() * 2) % 2) == 0) {
 				char saved = number[cursorPos];
@@ -524,27 +430,14 @@ void number_conv_inputscreen(void) {
 			}
 		}
 
-		DrawRectangleRec(btnBack,
-		                 CheckCollisionPointRec(mouse, btnBack) ? ORANGE : RED);
+		DrawRectangleRec(btnBack, CheckCollisionPointRec(mouse, btnBack) ? ORANGE : RED);
 
-		DrawText("Back",
-		         BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2,
-		         BACK_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("Back", BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2, BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
 		if (invalid) {
-			DrawText("INVALID INPUT",
-			         (SCREEN_W - MeasureText("INVALID INPUT", 24)) / 2,
-			         INPUT_BOX_Y + BOX_H + 30,
-			         24,
-			         RED);
+			DrawText("INVALID INPUT", (SCREEN_W - MeasureText("INVALID INPUT", 24)) / 2, INPUT_BOX_Y + BOX_H + 30, 24, RED);
 		} else {
-			DrawText("Press ENTER to Continue",
-			         (SCREEN_W - MeasureText("Press ENTER to Continue", 22)) / 2,
-			         INPUT_BOX_Y + BOX_H + 30,
-			         22,
-			         GRAY);
+			DrawText("Press ENTER to Continue", (SCREEN_W - MeasureText("Press ENTER to Continue", 22)) / 2, INPUT_BOX_Y + BOX_H + 30, 22, GRAY);
 		}
 		EndDrawing();
 	}
@@ -563,8 +456,7 @@ void number_conv_outputscreen(void) {
 			return;
 		}
 
-		if (CheckCollisionPointRec(mouse, btnBack) &&
-		        IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+		if (CheckCollisionPointRec(mouse, btnBack) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 			choice = 0;
 			return;
 		}
@@ -582,17 +474,11 @@ void number_conv_outputscreen(void) {
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		DrawText("NUMBER CONVERSION SYSTEM",
-		         (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2,
-		         TITLE_Y, TITLE_SIZE, GREEN);
+		DrawText("NUMBER CONVERSION SYSTEM", (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2, TITLE_Y, TITLE_SIZE, GREEN);
 
-		DrawText(currentTime,
-		         (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2,
-		         SUBTITLE_Y, SUBTITLE_SIZE, GRAY);
+		DrawText(currentTime, (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2, SUBTITLE_Y, SUBTITLE_SIZE, GRAY);
 
-		DrawText("RESULT VIEW",
-		         (SCREEN_W - MeasureText("RESULT VIEW", 40)) / 2,
-		         TIME_Y, 40, LIGHTGRAY);
+		DrawText("RESULT VIEW", (SCREEN_W - MeasureText("RESULT VIEW", 40)) / 2, TIME_Y, 40, LIGHTGRAY);
 
 		DrawText("Input Base :", 520, CONFIG_INFO_Y, TEXT_SIZE, WHITE);
 
@@ -639,8 +525,7 @@ void number_conv_outputscreen(void) {
 		DrawRectangle(BOX_X, INPUT_BOX_Y, BOX_W, BOX_H, DARKGRAY);
 		DrawRectangleLines(BOX_X, INPUT_BOX_Y, BOX_W, BOX_H, WHITE);
 
-		DrawText(TextSubtext(number, strlen(number) > 30 ? strlen(number) - 30 : 0, 30),
-		         BOX_X + 15, INPUT_BOX_Y + 20, TEXT_SIZE, WHITE);
+		DrawText(TextSubtext(number, strlen(number) > 30 ? strlen(number) - 30 : 0, 30), BOX_X + 15, INPUT_BOX_Y + 20, TEXT_SIZE, WHITE);
 
 		DrawText("OUTPUT NUMBER", BOX_X, OUTPUT_BOX_Y - 40, 24, GREEN);
 
@@ -652,8 +537,7 @@ void number_conv_outputscreen(void) {
 		} else {
 			switch(output_choice) {
 				case 1:
-					DrawText(TextSubtext(result_bin, strlen(result_bin) > 30 ? strlen(result_bin) - 30 : 0, 30),
-					         BOX_X + 15, OUTPUT_BOX_Y + 20, TEXT_SIZE, WHITE);
+					DrawText(TextSubtext(result_bin, strlen(result_bin) > 30 ? strlen(result_bin) - 30 : 0, 30), BOX_X + 15, OUTPUT_BOX_Y + 20, TEXT_SIZE, WHITE);
 					break;
 
 				case 2: {
@@ -681,13 +565,9 @@ void number_conv_outputscreen(void) {
 
 		DrawRectangleRec(btnBack, CheckCollisionPointRec(mouse, btnBack) ? ORANGE : RED);
 
-		DrawText("Back",
-		         BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2,
-		         BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+		DrawText("Back", BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2, BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Press ENTER or ESC to return",
-		         (SCREEN_W - MeasureText("Press ENTER or ESC to return", 22)) / 2,
-		         OUTPUT_BOX_Y + BOX_H + 30, 22, GRAY);
+		DrawText("Press ENTER or ESC to return", (SCREEN_W - MeasureText("Press ENTER or ESC to return", 22)) / 2, OUTPUT_BOX_Y + BOX_H + 30, 22, GRAY);
 
 		EndDrawing();
 	}
@@ -715,8 +595,7 @@ void number_logs_screen(void) {
 			return;
 		}
 
-		if(CheckCollisionPointRec(mouse, btnBack) &&
-		        IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+		if(CheckCollisionPointRec(mouse, btnBack) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 			if(fp != NULL)
 				fclose(fp);
 
@@ -727,17 +606,9 @@ void number_logs_screen(void) {
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		DrawText("NUMBER CONVERSION LOGS",
-		         (SCREEN_W - MeasureText("NUMBER CONVERSION LOGS", TITLE_SIZE)) / 2,
-		         40,
-		         TITLE_SIZE,
-		         YELLOW);
+		DrawText("NUMBER CONVERSION LOGS", (SCREEN_W - MeasureText("NUMBER CONVERSION LOGS", TITLE_SIZE)) / 2, 40, TITLE_SIZE, YELLOW);
 
-		DrawText(currentTime,
-		         (SCREEN_W - MeasureText(currentTime, 22)) / 2,
-		         95,
-		         22,
-		         GRAY);
+		DrawText(currentTime, (SCREEN_W - MeasureText(currentTime, 22)) / 2, 95, 22, GRAY);
 
 		{
 			char viewingText[80];
@@ -747,11 +618,7 @@ void number_logs_screen(void) {
 			else
 				sprintf(viewingText, "Viewing: %s", currentUser.username);
 
-			DrawText(viewingText,
-			         (SCREEN_W - MeasureText(viewingText, 22)) / 2,
-			         130,
-			         22,
-			         SKYBLUE);
+			DrawText(viewingText, (SCREEN_W - MeasureText(viewingText, 22)) / 2, 130, 22, SKYBLUE);
 		}
 
 		DrawLine(60,170,1860,170,WHITE);
@@ -770,11 +637,7 @@ void number_logs_screen(void) {
 		y = 240 + scroll;
 
 		if(fp == NULL) {
-			DrawText("NO NUMBER CONVERSION LOGS FOUND",
-			         (SCREEN_W - MeasureText("NO NUMBER CONVERSION LOGS FOUND",30))/2,
-			         500,
-			         30,
-			         RED);
+			DrawText("NO NUMBER CONVERSION LOGS FOUND", (SCREEN_W - MeasureText("NO NUMBER CONVERSION LOGS FOUND",30))/2, 500, 30, RED);
 		} else {
 			fseek(fp, 0, SEEK_END);
 
@@ -788,8 +651,7 @@ void number_logs_screen(void) {
 				for(long i = 0; i < totalLogs; i++) {
 					fseek(fp, i * sizeof(NumLog), SEEK_SET);
 
-					if(fread(&log, sizeof(NumLog), 1, fp) == 1 &&
-					        strcmp(log.username, currentUser.username) == 0) {
+					if(fread(&log, sizeof(NumLog), 1, fp) == 1 && strcmp(log.username, currentUser.username) == 0) {
 						visibleLogs++;
 					}
 				}
@@ -814,8 +676,7 @@ void number_logs_screen(void) {
 				if(fread(&log, sizeof(NumLog), 1, fp) != 1)
 					continue;
 
-				if(!currentUser.isAdmin &&
-				        strcmp(log.username, currentUser.username) != 0)
+				if(!currentUser.isAdmin && strcmp(log.username, currentUser.username) != 0)
 					continue;
 
 				if(y < 240) {
@@ -828,47 +689,22 @@ void number_logs_screen(void) {
 
 				char timeStr[50];
 
-				strftime(timeStr,
-				         sizeof(timeStr),
-				         "%d %b %Y %I:%M %p",
-				         localtime(&log.used_time));
+				strftime(timeStr, sizeof(timeStr), "%d %b %Y %I:%M %p", localtime(&log.used_time));
 
 
 				if(((y - 260) / 40) % 2 == 0) {
 					DrawRectangle(60, y - 5, 1800, 35, Fade(DARKGRAY, 0.35f));
 				}
 
-				DrawText(timeStr,
-				         80,
-				         y,
-				         20,
-				         WHITE);
+				DrawText(timeStr, 80, y, 20, WHITE);
 
 				if(currentUser.isAdmin) {
-					DrawText(
-					    TextSubtext(log.username,0,15),
-					    340,
-					    y,
-					    20,
-					    ORANGE
-					);
+					DrawText( TextSubtext(log.username,0,15), 340, y, 20, ORANGE );
 				}
 
-				DrawText(
-				    TextSubtext(log.input_number,0,20),
-				    560,
-				    y,
-				    20,
-				    GREEN
-				);
+				DrawText( TextSubtext(log.input_number,0,20), 560, y, 20, GREEN );
 
-				DrawText(
-				    TextSubtext(log.output_number,0,20),
-				    900,
-				    y,
-				    20,
-				    GREEN
-				);
+				DrawText( TextSubtext(log.output_number,0,20), 900, y, 20, GREEN );
 
 				switch(log.input_base) {
 					case 1:
@@ -910,20 +746,11 @@ void number_logs_screen(void) {
 			}
 		}
 
-		DrawRectangleRec(btnBack,
-		                 CheckCollisionPointRec(mouse, btnBack) ? ORANGE : RED);
+		DrawRectangleRec(btnBack, CheckCollisionPointRec(mouse, btnBack) ? ORANGE : RED);
 
-		DrawText("Back",
-		         BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2,
-		         BACK_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("Back", BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2, BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Use Mouse Wheel to Scroll",
-		         (SCREEN_W - MeasureText("Use Mouse Wheel to Scroll", 22)) / 2,
-		         1010,
-		         22,
-		         GRAY);
+		DrawText("Use Mouse Wheel to Scroll", (SCREEN_W - MeasureText("Use Mouse Wheel to Scroll", 22)) / 2, 1010, 22, GRAY);
 
 		if(fp != NULL) {
 			fclose(fp);
@@ -993,119 +820,53 @@ void bitwise_ope_interface(void) {
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		DrawText("BITWISE TOOLS",
-		         (SCREEN_W - MeasureText("BITWISE TOOLS", TITLE_SIZE)) / 2,
-		         TITLE_Y,
-		         TITLE_SIZE,
-		         GREEN);
+		DrawText("BITWISE TOOLS", (SCREEN_W - MeasureText("BITWISE TOOLS", TITLE_SIZE)) / 2, TITLE_Y, TITLE_SIZE, GREEN);
 
-		DrawText(currentTime,
-		         (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2,
-		         SUBTITLE_Y,
-		         SUBTITLE_SIZE,
-		         GRAY);
+		DrawText(currentTime, (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2, SUBTITLE_Y, SUBTITLE_SIZE, GRAY);
 
-		DrawText("SELECT",
-		         (SCREEN_W - MeasureText("SELECT", 34)) / 2,
-		         TIME_Y,
-		         34,
-		         LIGHTGRAY);
+		DrawText("SELECT", (SCREEN_W - MeasureText("SELECT", 34)) / 2, TIME_Y, 34, LIGHTGRAY);
 
-		DrawText("BITWISE OPERATION",
-		         (SCREEN_W - MeasureText("BITWISE OPERATION", 50)) / 2,
-		         TIME_Y + 50,
-		         50,
-		         YELLOW);
+		DrawText("BITWISE OPERATION", (SCREEN_W - MeasureText("BITWISE OPERATION", 50)) / 2, TIME_Y + 50, 50, YELLOW);
 
-		DrawRectangleRec(btnAnd,
-		                 CheckCollisionPointRec(mouse, btnAnd) ? SKYBLUE : DARKBLUE);
+		DrawRectangleRec(btnAnd, CheckCollisionPointRec(mouse, btnAnd) ? SKYBLUE : DARKBLUE);
 
-		DrawRectangleRec(btnOr,
-		                 CheckCollisionPointRec(mouse, btnOr) ? SKYBLUE : DARKBLUE);
+		DrawRectangleRec(btnOr, CheckCollisionPointRec(mouse, btnOr) ? SKYBLUE : DARKBLUE);
 
-		DrawRectangleRec(btnNot,
-		                 CheckCollisionPointRec(mouse, btnNot) ? SKYBLUE : DARKBLUE);
+		DrawRectangleRec(btnNot, CheckCollisionPointRec(mouse, btnNot) ? SKYBLUE : DARKBLUE);
 
-		DrawRectangleRec(btnXor,
-		                 CheckCollisionPointRec(mouse, btnXor) ? SKYBLUE : DARKBLUE);
+		DrawRectangleRec(btnXor, CheckCollisionPointRec(mouse, btnXor) ? SKYBLUE : DARKBLUE);
 
-		DrawRectangleRec(btnXnor,
-		                 CheckCollisionPointRec(mouse, btnXnor) ? SKYBLUE : DARKBLUE);
+		DrawRectangleRec(btnXnor, CheckCollisionPointRec(mouse, btnXnor) ? SKYBLUE : DARKBLUE);
 
-		DrawRectangleRec(btnNand,
-		                 CheckCollisionPointRec(mouse, btnNand) ? SKYBLUE : DARKBLUE);
+		DrawRectangleRec(btnNand, CheckCollisionPointRec(mouse, btnNand) ? SKYBLUE : DARKBLUE);
 
-		DrawRectangleRec(btnLeft,
-		                 CheckCollisionPointRec(mouse, btnLeft) ? SKYBLUE : DARKBLUE);
+		DrawRectangleRec(btnLeft, CheckCollisionPointRec(mouse, btnLeft) ? SKYBLUE : DARKBLUE);
 
-		DrawRectangleRec(btnRight,
-		                 CheckCollisionPointRec(mouse, btnRight) ? SKYBLUE : DARKBLUE);
+		DrawRectangleRec(btnRight, CheckCollisionPointRec(mouse, btnRight) ? SKYBLUE : DARKBLUE);
 
-		DrawRectangleRec(btnCount,
-		                 CheckCollisionPointRec(mouse, btnCount) ? SKYBLUE : DARKBLUE);
+		DrawRectangleRec(btnCount, CheckCollisionPointRec(mouse, btnCount) ? SKYBLUE : DARKBLUE);
 
-		DrawRectangleRec(btnBack,
-		                 CheckCollisionPointRec(mouse, btnBack) ? RED : MAROON);
+		DrawRectangleRec(btnBack, CheckCollisionPointRec(mouse, btnBack) ? RED : MAROON);
 
-		DrawText("AND",
-		         BIT_COL1_X + (BIT_BTN_W - MeasureText("AND", BUTTON_TEXT_SIZE)) / 2,
-		         BIT_ROW1_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("AND", BIT_COL1_X + (BIT_BTN_W - MeasureText("AND", BUTTON_TEXT_SIZE)) / 2, BIT_ROW1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("OR",
-		         BIT_COL2_X + (BIT_BTN_W - MeasureText("OR", BUTTON_TEXT_SIZE)) / 2,
-		         BIT_ROW1_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("OR", BIT_COL2_X + (BIT_BTN_W - MeasureText("OR", BUTTON_TEXT_SIZE)) / 2, BIT_ROW1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("NOT",
-		         BIT_COL3_X + (BIT_BTN_W - MeasureText("NOT", BUTTON_TEXT_SIZE)) / 2,
-		         BIT_ROW1_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("NOT", BIT_COL3_X + (BIT_BTN_W - MeasureText("NOT", BUTTON_TEXT_SIZE)) / 2, BIT_ROW1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("XOR",
-		         BIT_COL1_X + (BIT_BTN_W - MeasureText("XOR", BUTTON_TEXT_SIZE)) / 2,
-		         BIT_ROW2_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("XOR", BIT_COL1_X + (BIT_BTN_W - MeasureText("XOR", BUTTON_TEXT_SIZE)) / 2, BIT_ROW2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("XNOR",
-		         BIT_COL2_X + (BIT_BTN_W - MeasureText("XNOR", BUTTON_TEXT_SIZE)) / 2,
-		         BIT_ROW2_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("XNOR", BIT_COL2_X + (BIT_BTN_W - MeasureText("XNOR", BUTTON_TEXT_SIZE)) / 2, BIT_ROW2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("NAND",
-		         BIT_COL3_X + (BIT_BTN_W - MeasureText("NAND", BUTTON_TEXT_SIZE)) / 2,
-		         BIT_ROW2_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("NAND", BIT_COL3_X + (BIT_BTN_W - MeasureText("NAND", BUTTON_TEXT_SIZE)) / 2, BIT_ROW2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("LEFT SHIFT",
-		         BIT_COL1_X + (BIT_BTN_W - MeasureText("LEFT SHIFT", BUTTON_TEXT_SIZE)) / 2,
-		         BIT_ROW3_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("LEFT SHIFT", BIT_COL1_X + (BIT_BTN_W - MeasureText("LEFT SHIFT", BUTTON_TEXT_SIZE)) / 2, BIT_ROW3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("RIGHT SHIFT",
-		         BIT_COL2_X + (BIT_BTN_W - MeasureText("RIGHT SHIFT", BUTTON_TEXT_SIZE)) / 2,
-		         BIT_ROW3_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("RIGHT SHIFT", BIT_COL2_X + (BIT_BTN_W - MeasureText("RIGHT SHIFT", BUTTON_TEXT_SIZE)) / 2, BIT_ROW3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("COUNT SET BITS",
-		         BIT_COL3_X + (BIT_BTN_W - MeasureText("COUNT SET BITS", BUTTON_TEXT_SIZE)) / 2,
-		         BIT_ROW3_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("COUNT SET BITS", BIT_COL3_X + (BIT_BTN_W - MeasureText("COUNT SET BITS", BUTTON_TEXT_SIZE)) / 2, BIT_ROW3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Back",
-		         BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2,
-		         BACK_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("Back", BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2, BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
 		EndDrawing();
 
@@ -1397,23 +1158,11 @@ void bitwise_ope_inputscreen(void) {
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		DrawText("BITWISE OPERATION SYSTEM",
-		         (SCREEN_W - MeasureText("BITWISE OPERATION SYSTEM", TITLE_SIZE))/2,
-		         TITLE_Y,
-		         TITLE_SIZE,
-		         GREEN);
+		DrawText("BITWISE OPERATION SYSTEM", (SCREEN_W - MeasureText("BITWISE OPERATION SYSTEM", TITLE_SIZE))/2, TITLE_Y, TITLE_SIZE, GREEN);
 
-		DrawText(currentTime,
-		         (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE))/2,
-		         SUBTITLE_Y,
-		         SUBTITLE_SIZE,
-		         GRAY);
+		DrawText(currentTime, (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE))/2, SUBTITLE_Y, SUBTITLE_SIZE, GRAY);
 
-		DrawText("OPERATION :",
-		         500,
-		         220,
-		         TEXT_SIZE,
-		         WHITE);
+		DrawText("OPERATION :", 500, 220, TEXT_SIZE, WHITE);
 
 		switch(choice1) {
 			case 1:
@@ -1455,8 +1204,7 @@ void bitwise_ope_inputscreen(void) {
 
 		DrawText("FIRST NUMBER", BOX_X, INPUT_BOX_Y - 35, 24, GREEN);
 
-		DrawRectangleRec(box1,
-		                 activeBox == 1 ? DARKBLUE : DARKGRAY);
+		DrawRectangleRec(box1, activeBox == 1 ? DARKBLUE : DARKGRAY);
 		DrawRectangleLinesEx(box1, 2, WHITE);
 
 		{
@@ -1464,11 +1212,7 @@ void bitwise_ope_inputscreen(void) {
 			while(MeasureText(number1 + start1, TEXT_SIZE) > BOX_W - 30 && start1 < cursorPos1)
 				start1++;
 
-			DrawText(number1 + start1,
-			         BOX_X + 15,
-			         INPUT_BOX_Y + 20,
-			         TEXT_SIZE,
-			         WHITE);
+			DrawText(number1 + start1, BOX_X + 15, INPUT_BOX_Y + 20, TEXT_SIZE, WHITE);
 
 			if(activeBox == 1 && ((int)(GetTime() * 2) % 2) == 0) {
 				char saved = number1[cursorPos1];
@@ -1481,33 +1225,20 @@ void bitwise_ope_inputscreen(void) {
 		}
 
 		if(choice1 == 3 || choice1 == 9) {
-			DrawText("(Single input only)",
-			         BOX_X,
-			         INPUT_BOX_Y + 85,
-			         20,
-			         GRAY);
+			DrawText("(Single input only)", BOX_X, INPUT_BOX_Y + 85, 20, GRAY);
 		}
 
 		else if(choice1 == 7 || choice1 == 8) {
-			DrawText("SHIFT COUNT",
-			         BOX_X,
-			         INPUT_BOX_Y + 85,
-			         24,
-			         GREEN);
+			DrawText("SHIFT COUNT", BOX_X, INPUT_BOX_Y + 85, 24, GREEN);
 
-			DrawRectangleRec(boxShift,
-			                 activeBox == 2 ? DARKBLUE : DARKGRAY);
+			DrawRectangleRec(boxShift, activeBox == 2 ? DARKBLUE : DARKGRAY);
 			DrawRectangleLinesEx(boxShift, 2, WHITE);
 
 			int startS = 0;
 			while(MeasureText(shiftText + startS, TEXT_SIZE) > BOX_W - 30 && startS < cursorPosShift)
 				startS++;
 
-			DrawText(shiftText + startS,
-			         BOX_X + 15,
-			         INPUT_BOX_Y + 140,
-			         TEXT_SIZE,
-			         WHITE);
+			DrawText(shiftText + startS, BOX_X + 15, INPUT_BOX_Y + 140, TEXT_SIZE, WHITE);
 
 			if(activeBox == 2 && ((int)(GetTime() * 2) % 2) == 0) {
 				char saved = shiftText[cursorPosShift];
@@ -1518,25 +1249,16 @@ void bitwise_ope_inputscreen(void) {
 				DrawRectangle(cursorX, INPUT_BOX_Y + 135, 3, TEXT_SIZE, WHITE);
 			}
 		} else {
-			DrawText("SECOND NUMBER",
-			         BOX_X,
-			         INPUT_BOX_Y + 85,
-			         24,
-			         GREEN);
+			DrawText("SECOND NUMBER", BOX_X, INPUT_BOX_Y + 85, 24, GREEN);
 
-			DrawRectangleRec(box2,
-			                 activeBox == 2 ? DARKBLUE : DARKGRAY);
+			DrawRectangleRec(box2, activeBox == 2 ? DARKBLUE : DARKGRAY);
 			DrawRectangleLinesEx(box2, 2, WHITE);
 
 			int start2 = 0;
 			while(MeasureText(number2 + start2, TEXT_SIZE) > BOX_W - 30 && start2 < cursorPos2)
 				start2++;
 
-			DrawText(number2 + start2,
-			         BOX_X + 15,
-			         INPUT_BOX_Y + 140,
-			         TEXT_SIZE,
-			         WHITE);
+			DrawText(number2 + start2, BOX_X + 15, INPUT_BOX_Y + 140, TEXT_SIZE, WHITE);
 
 			if(activeBox == 2 && ((int)(GetTime() * 2) % 2) == 0) {
 				char saved = number2[cursorPos2];
@@ -1548,33 +1270,16 @@ void bitwise_ope_inputscreen(void) {
 			}
 		}
 
-		DrawRectangleRec(btnBack,
-		                 CheckCollisionPointRec(mouse, btnBack) ? ORANGE : RED);
+		DrawRectangleRec(btnBack, CheckCollisionPointRec(mouse, btnBack) ? ORANGE : RED);
 
-		DrawText("Back",
-		         BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2,
-		         BACK_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("Back", BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2, BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("TAB : Switch Input Box",
-		         BOX_X,
-		         OUTPUT_BOX_Y + 70,
-		         22,
-		         GRAY);
+		DrawText("TAB : Switch Input Box", BOX_X, OUTPUT_BOX_Y + 70, 22, GRAY);
 
-		DrawText("ENTER : Continue",
-		         BOX_X,
-		         OUTPUT_BOX_Y + 105,
-		         22,
-		         GRAY);
+		DrawText("ENTER : Continue", BOX_X, OUTPUT_BOX_Y + 105, 22, GRAY);
 
 		if(invalid) {
-			DrawText("PLEASE ENTER ALL REQUIRED VALUES",
-			         (SCREEN_W - MeasureText("PLEASE ENTER ALL REQUIRED VALUES", 24)) / 2,
-			         OUTPUT_BOX_Y + 145,
-			         24,
-			         RED);
+			DrawText("PLEASE ENTER ALL REQUIRED VALUES", (SCREEN_W - MeasureText("PLEASE ENTER ALL REQUIRED VALUES", 24)) / 2, OUTPUT_BOX_Y + 145, 24, RED);
 		}
 		EndDrawing();
 	}
@@ -1592,8 +1297,7 @@ void bitwise_ope_outputscreen(void) {
 			return;
 		}
 
-		if(CheckCollisionPointRec(mouse, btnBack) &&
-		        IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+		if(CheckCollisionPointRec(mouse, btnBack) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 			choice = 0;
 			return;
 		}
@@ -1611,17 +1315,11 @@ void bitwise_ope_outputscreen(void) {
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		DrawText("BITWISE OPERATION SYSTEM",
-		         (SCREEN_W - MeasureText("BITWISE OPERATION SYSTEM", TITLE_SIZE)) / 2,
-		         TITLE_Y, TITLE_SIZE, GREEN);
+		DrawText("BITWISE OPERATION SYSTEM", (SCREEN_W - MeasureText("BITWISE OPERATION SYSTEM", TITLE_SIZE)) / 2, TITLE_Y, TITLE_SIZE, GREEN);
 
-		DrawText(currentTime,
-		         (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2,
-		         SUBTITLE_Y, SUBTITLE_SIZE, GRAY);
+		DrawText(currentTime, (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2, SUBTITLE_Y, SUBTITLE_SIZE, GRAY);
 
-		DrawText("RESULT VIEW",
-		         (SCREEN_W - MeasureText("RESULT VIEW", 40)) / 2,
-		         TIME_Y, 40, LIGHTGRAY);
+		DrawText("RESULT VIEW", (SCREEN_W - MeasureText("RESULT VIEW", 40)) / 2, TIME_Y, 40, LIGHTGRAY);
 
 		DrawText("Operation :", 520, CONFIG_INFO_Y, TEXT_SIZE, WHITE);
 
@@ -1668,35 +1366,18 @@ void bitwise_ope_outputscreen(void) {
 		DrawRectangle(BOX_X, INPUT_BOX_Y, BOX_W, BOX_H, DARKGRAY);
 		DrawRectangleLines(BOX_X, INPUT_BOX_Y, BOX_W, BOX_H, WHITE);
 
-		DrawText(number1,
-		         BOX_X + 15,
-		         INPUT_BOX_Y + 20,
-		         TEXT_SIZE,
-		         WHITE);
+		DrawText(number1, BOX_X + 15, INPUT_BOX_Y + 20, TEXT_SIZE, WHITE);
 
 		if(choice1 != 3 && choice1 != 9) {
-			DrawText(choice1 == 7 || choice1 == 8 ?
-			         "SHIFT COUNT" : "SECOND VALUE",
-			         BOX_X,
-			         OUTPUT_BOX_Y - 40,
-			         24,
-			         GREEN);
+			DrawText(choice1 == 7 || choice1 == 8 ? "SHIFT COUNT" : "SECOND VALUE", BOX_X, OUTPUT_BOX_Y - 40, 24, GREEN);
 
 			DrawRectangle(BOX_X, OUTPUT_BOX_Y, BOX_W, BOX_H, DARKGRAY);
 			DrawRectangleLines(BOX_X, OUTPUT_BOX_Y, BOX_W, BOX_H, WHITE);
 
 			if(choice1 == 7 || choice1 == 8) {
-				DrawText(shiftText,
-				         BOX_X + 15,
-				         OUTPUT_BOX_Y + 20,
-				         TEXT_SIZE,
-				         WHITE);
+				DrawText(shiftText, BOX_X + 15, OUTPUT_BOX_Y + 20, TEXT_SIZE, WHITE);
 			} else {
-				DrawText(number2,
-				         BOX_X + 15,
-				         OUTPUT_BOX_Y + 20,
-				         TEXT_SIZE,
-				         WHITE);
+				DrawText(number2, BOX_X + 15, OUTPUT_BOX_Y + 20, TEXT_SIZE, WHITE);
 			}
 		}
 
@@ -1708,27 +1389,14 @@ void bitwise_ope_outputscreen(void) {
 		{
 			sprintf(temp, "%u", result);
 
-			DrawText(temp,
-			         BOX_X + 15,
-			         OUTPUT_BOX_Y + 200,
-			         TEXT_SIZE,
-			         WHITE);
+			DrawText(temp, BOX_X + 15, OUTPUT_BOX_Y + 200, TEXT_SIZE, WHITE);
 		}
 
-		DrawRectangleRec(btnBack,
-		                 CheckCollisionPointRec(mouse, btnBack) ? ORANGE : RED);
+		DrawRectangleRec(btnBack, CheckCollisionPointRec(mouse, btnBack) ? ORANGE : RED);
 
-		DrawText("Back",
-		         BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2,
-		         BACK_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("Back", BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2, BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Press ENTER or ESC to return",
-		         (SCREEN_W - MeasureText("Press ENTER or ESC to return", 22)) / 2,
-		         OUTPUT_BOX_Y + 340,
-		         22,
-		         GRAY);
+		DrawText("Press ENTER or ESC to return", (SCREEN_W - MeasureText("Press ENTER or ESC to return", 22)) / 2, OUTPUT_BOX_Y + 340, 22, GRAY);
 
 		EndDrawing();
 	}
@@ -1755,8 +1423,7 @@ void bitwise_logs_screen(void) {
 			return;
 		}
 
-		if(CheckCollisionPointRec(mouse, btnBack) &&
-		        IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+		if(CheckCollisionPointRec(mouse, btnBack) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 			if(fp != NULL)
 				fclose(fp);
 
@@ -1767,17 +1434,9 @@ void bitwise_logs_screen(void) {
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		DrawText("BITWISE OPERATION LOGS",
-		         (SCREEN_W - MeasureText("BITWISE OPERATION LOGS", TITLE_SIZE)) / 2,
-		         40,
-		         TITLE_SIZE,
-		         YELLOW);
+		DrawText("BITWISE OPERATION LOGS", (SCREEN_W - MeasureText("BITWISE OPERATION LOGS", TITLE_SIZE)) / 2, 40, TITLE_SIZE, YELLOW);
 
-		DrawText(currentTime,
-		         (SCREEN_W - MeasureText(currentTime, 22)) / 2,
-		         95,
-		         22,
-		         GRAY);
+		DrawText(currentTime, (SCREEN_W - MeasureText(currentTime, 22)) / 2, 95, 22, GRAY);
 
 		{
 			char viewingText[80];
@@ -1787,11 +1446,7 @@ void bitwise_logs_screen(void) {
 			else
 				sprintf(viewingText, "Viewing: %s", currentUser.username);
 
-			DrawText(viewingText,
-			         (SCREEN_W - MeasureText(viewingText, 22)) / 2,
-			         130,
-			         22,
-			         SKYBLUE);
+			DrawText(viewingText, (SCREEN_W - MeasureText(viewingText, 22)) / 2, 130, 22, SKYBLUE);
 		}
 
 		DrawLine(60,170,1860,170,WHITE);
@@ -1810,11 +1465,7 @@ void bitwise_logs_screen(void) {
 		y = 240 + scroll;
 
 		if(fp == NULL) {
-			DrawText("NO BITWISE OPERATION LOGS FOUND",
-			         (SCREEN_W - MeasureText("NO BITWISE OPERATION LOGS FOUND",30))/2,
-			         500,
-			         30,
-			         RED);
+			DrawText("NO BITWISE OPERATION LOGS FOUND", (SCREEN_W - MeasureText("NO BITWISE OPERATION LOGS FOUND",30))/2, 500, 30, RED);
 		} else {
 			fseek(fp, 0, SEEK_END);
 
@@ -1828,8 +1479,7 @@ void bitwise_logs_screen(void) {
 				for(long i = 0; i < totalLogs; i++) {
 					fseek(fp, i * sizeof(BitLog), SEEK_SET);
 
-					if(fread(&log, sizeof(BitLog), 1, fp) == 1 &&
-					        strcmp(log.username, currentUser.username) == 0) {
+					if(fread(&log, sizeof(BitLog), 1, fp) == 1 && strcmp(log.username, currentUser.username) == 0) {
 						visibleLogs++;
 					}
 				}
@@ -1855,8 +1505,7 @@ void bitwise_logs_screen(void) {
 				if(fread(&log, sizeof(BitLog), 1, fp) != 1)
 					continue;
 
-				if(!currentUser.isAdmin &&
-				        strcmp(log.username, currentUser.username) != 0)
+				if(!currentUser.isAdmin && strcmp(log.username, currentUser.username) != 0)
 					continue;
 
 				if(y < 240) {
@@ -1869,29 +1518,16 @@ void bitwise_logs_screen(void) {
 
 				char timeStr[50];
 
-				strftime(timeStr,
-				         sizeof(timeStr),
-				         "%d %b %Y %I:%M %p",
-				         localtime(&log.used_time));
+				strftime(timeStr, sizeof(timeStr), "%d %b %Y %I:%M %p", localtime(&log.used_time));
 
 				if(((y - 260) / 40) % 2 == 0) {
 					DrawRectangle(60, y - 5, 1800, 35, Fade(DARKGRAY, 0.35f));
 				}
 
-				DrawText(timeStr,
-				         80,
-				         y,
-				         20,
-				         WHITE);
+				DrawText(timeStr, 80, y, 20, WHITE);
 
 				if(currentUser.isAdmin) {
-					DrawText(
-					    TextSubtext(log.username,0,15),
-					    340,
-					    y,
-					    20,
-					    ORANGE
-					);
+					DrawText( TextSubtext(log.username,0,15), 340, y, 20, ORANGE );
 				}
 
 				char opStr[16];
@@ -1949,20 +1585,11 @@ void bitwise_logs_screen(void) {
 			}
 		}
 
-		DrawRectangleRec(btnBack,
-		                 CheckCollisionPointRec(mouse, btnBack) ? ORANGE : RED);
+		DrawRectangleRec(btnBack, CheckCollisionPointRec(mouse, btnBack) ? ORANGE : RED);
 
-		DrawText("Back",
-		         BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2,
-		         BACK_Y + 20,
-		         BUTTON_TEXT_SIZE,
-		         WHITE);
+		DrawText("Back", BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2, BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-		DrawText("Use Mouse Wheel to Scroll",
-		         (SCREEN_W - MeasureText("Use Mouse Wheel to Scroll", 22)) / 2,
-		         1010,
-		         22,
-		         GRAY);
+		DrawText("Use Mouse Wheel to Scroll", (SCREEN_W - MeasureText("Use Mouse Wheel to Scroll", 22)) / 2, 1010, 22, GRAY);
 
 		if(fp != NULL) {
 			fclose(fp);
@@ -1978,43 +1605,23 @@ void bitwise_logs_screen(void) {
 }
 
 
-bool HoverButton(Rectangle button,
-                 const char text[],
-                 Color normal,
-                 Color hover,
-                 Color textColor) {
+bool HoverButton(Rectangle button, const char text[], Color normal, Color hover, Color textColor) {
 	Vector2 mouse = GetMousePosition();
 
 	bool over = CheckCollisionPointRec(mouse, button);
 
-	DrawRectangleRounded(
-	    button,
-	    0.25f,
-	    10,
-	    over ? hover : normal
-	);
+	DrawRectangleRounded( button, 0.25f, 10, over ? hover : normal );
 
 	int fontSize = 24;
 
 	int width = MeasureText(text, fontSize);
 
-	DrawText(
-	    text,
-	    button.x + button.width / 2 - width / 2,
-	    button.y + button.height / 2 - fontSize / 2,
-	    fontSize,
-	    textColor
-	);
+	DrawText( text, button.x + button.width / 2 - width / 2, button.y + button.height / 2 - fontSize / 2, fontSize, textColor );
 
 	return over && IsMouseButtonPressed(MOUSE_LEFT_BUTTON);
 }
 
-void TextInputBox(Rectangle box,
-                  char text[],
-                  int maxLength,
-                  int *letterCount,
-                  int id,
-                  bool isPassword)
+void TextInputBox(Rectangle box, char text[], int maxLength, int *letterCount, int id, bool isPassword)
 {
     Vector2 mouse = GetMousePosition();
 
@@ -2028,11 +1635,7 @@ void TextInputBox(Rectangle box,
 
     DrawRectangleRounded(box, 0.2f, 10, RAYWHITE);
 
-    DrawRectangleRoundedLines(box,
-                              0.2f,
-                              10,
-                              2,
-                              border);
+    DrawRectangleRoundedLines(box, 0.2f, 10, 2, border);
 
     if (activeBox == id)
     {
@@ -2040,9 +1643,7 @@ void TextInputBox(Rectangle box,
 
         while (key > 0)
         {
-            if (key >= 32 &&
-                key <= 125 &&
-                *letterCount < maxLength - 1)
+            if (key >= 32 && key <= 125 && *letterCount < maxLength - 1)
             {
                 text[*letterCount] = (char)key;
                 (*letterCount)++;
@@ -2092,27 +1693,17 @@ void TextInputBox(Rectangle box,
     while (MeasureText(displayText + start, 24) > box.width - 20 && displayText[start] != '\0')
         start++;
 
-    DrawText(displayText + start,
-             box.x + 10,
-             box.y + 12,
-             24,
-             BLACK);
+    DrawText(displayText + start, box.x + 10, box.y + 12, 24, BLACK);
 
     if (activeBox == id && ((int)(GetTime() * 2) % 2) == 0)
     {
         int textWidth = MeasureText(displayText + start, 24);
 
-        DrawRectangle(box.x + 10 + textWidth + 2,
-                      box.y + 10,
-                      2,
-                      28,
-                      BLACK);
+        DrawRectangle(box.x + 10 + textWidth + 2, box.y + 10, 2, 28, BLACK);
     }
 }
 
-void Popup(const char title[],
-           const char message[],
-           Color color) {
+void Popup(const char title[], const char message[], Color color) {
 	Rectangle box = {
 		CENTER_X(440),
 		CENTER_Y(220),
@@ -2120,28 +1711,13 @@ void Popup(const char title[],
 		220
 	};
 
-	DrawRectangleRounded(box,
-	                     0.25f,
-	                     10,
-	                     RAYWHITE);
+	DrawRectangleRounded(box, 0.25f, 10, RAYWHITE);
 
-	DrawRectangleRoundedLines(box,
-	                          0.25f,
-	                          10,
-	                          3,
-	                          color);
+	DrawRectangleRoundedLines(box, 0.25f, 10, 3, color);
 
-	DrawText(title,
-	         box.x+20,
-	         box.y+20,
-	         30,
-	         color);
+	DrawText(title, box.x+20, box.y+20, 30, color);
 
-	DrawText(message,
-	         box.x+20,
-	         box.y+80,
-	         22,
-	         BLACK);
+	DrawText(message, box.x+20, box.y+80, 22, BLACK);
 }
 
 void DrawAccountBadge(void) {
@@ -2154,17 +1730,9 @@ void DrawAccountBadge(void) {
 	DrawRectangleRounded(badge, 0.15f, 10, DARKBLUE);
 	DrawRectangleRoundedLines(badge, 0.15f, 10, 2, SKYBLUE);
 
-	DrawText(TextFormat("Logged in: %s", currentUser.username),
-	         badge.x + 15,
-	         badge.y + 12,
-	         20,
-	         WHITE);
+	DrawText(TextFormat("Logged in: %s", currentUser.username), badge.x + 15, badge.y + 12, 20, WHITE);
 
-	if(HoverButton(logoutBtn,
-	               "LOGOUT",
-	               RED,
-	               MAROON,
-	               WHITE)) {
+	if(HoverButton(logoutBtn, "LOGOUT", RED, MAROON, WHITE)) {
 		loggedIn = 0;
 
 		memset(&currentUser, 0, sizeof(User));
@@ -2208,39 +1776,21 @@ void login_screen(void) {
 	DrawCircleV(exitCenter, exitRadius, hoverExit ? MAROON : RED);
 	DrawCircleLines((int)exitCenter.x, (int)exitCenter.y, exitRadius, WHITE);
 	
-	DrawText("x",
-	         exitCenter.x - MeasureText("X", 30) / 2,
-	         exitCenter.y - 15,
-	         30,
-	         WHITE);
+	DrawText("x", exitCenter.x - MeasureText("X", 30) / 2, exitCenter.y - 15, 30, WHITE);
 	
 	
 	if (hoverExit && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 	{
 	    CloseWindow();
 	}
-	DrawText("LOGIN",
-	         SCREEN_W/2 - MeasureText("LOGIN",40)/2,
-	         card.y + 50,
-	         40,
-	         WHITE);
+	DrawText("LOGIN", SCREEN_W/2 - MeasureText("LOGIN",40)/2, card.y + 50, 40, WHITE);
 
 	DrawText("Username", fieldX, usernameBox.y - 25, 18, WHITE);
-	TextInputBox(usernameBox,
-	             loginUsername,
-	             MAX_LEN,
-	             &loginUsernameCount,
-	             1,
-	             false);
+	TextInputBox(usernameBox, loginUsername, MAX_LEN, &loginUsernameCount, 1, false);
 
 
 	DrawText("Password", fieldX, passwordBox.y - 25, 18, WHITE);
-	TextInputBox(passwordBox,
-	             loginPassword,
-	             MAX_LEN,
-	             &loginPasswordCount,
-	             2,
-	             !showPassword);
+	TextInputBox(passwordBox, loginPassword, MAX_LEN, &loginPasswordCount, 2, !showPassword);
              
 	// Press Enter on Password to Login
 	if (activeBox > 2)
@@ -2267,11 +1817,7 @@ void login_screen(void) {
 	}
 
 
-	if(HoverButton(loginButton,
-	               "LOGIN",
-	               BLUE,
-	               GREEN,
-	               WHITE)) {
+	if(HoverButton(loginButton, "LOGIN", BLUE, GREEN, WHITE)) {
 		registerSuccess = false;
 		forgotSuccess = false;
 
@@ -2291,11 +1837,7 @@ void login_screen(void) {
 	}
 
 
-	if(HoverButton(signupButton,
-	               "REGISTER",
-	               GRAY,
-	               RED,
-	               WHITE)) {
+	if(HoverButton(signupButton, "REGISTER", GRAY, RED, WHITE)) {
 		loginError = false;
 		registerSuccess = false;
 		forgotSuccess = false;
@@ -2304,11 +1846,7 @@ void login_screen(void) {
 	}
 
 
-	if(HoverButton(forgotButton,
-	               "FORGOT",
-	               GRAY,
-	               RED,
-	               WHITE)) {
+	if(HoverButton(forgotButton, "FORGOT", GRAY, RED, WHITE)) {
 		loginError = false;
 		registerSuccess = false;
 		forgotSuccess = false;
@@ -2317,35 +1855,19 @@ void login_screen(void) {
 	}
 
 	if(loginError) {
-		DrawText("Invalid Username or Password",
-		         fieldX,
-		         card.y + 340,
-		         22,
-		         RED);
+		DrawText("Invalid Username or Password", fieldX, card.y + 340, 22, RED);
 	}
 
 	// Messages handed off from REGISTER / FORGOT PASSWORD, shown here
 	// once we've already navigated back to the login screen.
 	if(registerSuccess) {
-		DrawText("Account Created Successfully! Please login.",
-		         SCREEN_W/2 - MeasureText("Account Created Successfully! Please login.", 22)/2,
-		         card.y + 340,
-		         22,
-		         GREEN);
+		DrawText("Account Created Successfully! Please login.", SCREEN_W/2 - MeasureText("Account Created Successfully! Please login.", 22)/2, card.y + 340, 22, GREEN);
 	}
 
 	if(forgotSuccess) {
-		DrawText("Password Changed Successfully! Please login.",
-		         SCREEN_W/2 - MeasureText("Password Changed Successfully! Please login.", 22)/2,
-		         card.y + 340,
-		         22,
-		         GREEN);
+		DrawText("Password Changed Successfully! Please login.", SCREEN_W/2 - MeasureText("Password Changed Successfully! Please login.", 22)/2, card.y + 340, 22, GREEN);
 	}
-		DrawText("Press ESC to Quit",
-		         fieldX,
-		         card.y + 530,
-		         22,
-		         GRAY);
+		DrawText("Press ESC to Quit", fieldX, card.y + 530, 22, GRAY);
 }
 
 void signup_screen(void) {
@@ -2367,67 +1889,28 @@ void signup_screen(void) {
 	DrawRectangleRounded(card, 0.08f, 10, DARKBLUE);
 	DrawRectangleRoundedLines(card, 0.08f, 10, 3, SKYBLUE);
 
-	DrawText("REGISTER",
-	         SCREEN_W/2 -
-	         MeasureText("REGISTER",40)/2,
-	         card.y + 40,
-	         40,
-	         WHITE);
+	DrawText("REGISTER", SCREEN_W/2 - MeasureText("REGISTER",40)/2, card.y + 40, 40, WHITE);
 
 	DrawText("Username", fieldX, usernameBox.y - 20, 18, WHITE);
-	TextInputBox(usernameBox,
-	             newUser.username,
-	             MAX_LEN,
-	             &registerUsernameCount,
-	             1,
-	             false);
+	TextInputBox(usernameBox, newUser.username, MAX_LEN, &registerUsernameCount, 1, false);
 
 	DrawText("Password", fieldX, passwordBox.y - 25, 18, WHITE);
-	TextInputBox(passwordBox,
-	             newUser.password,
-	             MAX_LEN,
-	             &registerPasswordCount,
-	             2,
-	             true);
+	TextInputBox(passwordBox, newUser.password, MAX_LEN, &registerPasswordCount, 2, true);
 
 	DrawText("Confirm Password", fieldX, confirmBox.y - 25, 18, WHITE);
-	TextInputBox(confirmBox,
-	             confirmPassword,
-	             MAX_LEN,
-	             &confirmPasswordCount,
-	             3,
-	             true);
+	TextInputBox(confirmBox, confirmPassword, MAX_LEN, &confirmPasswordCount, 3, true);
 
 	DrawText("Security Question", fieldX, questionBox.y - 25, 18, WHITE);
-	TextInputBox(questionBox,
-	             newUser.question,
-	             MAX_LEN,
-	             &questionCount,
-	             4,
-	             false);
+	TextInputBox(questionBox, newUser.question, MAX_LEN, &questionCount, 4, false);
 
 	DrawText("Security Answer", fieldX, answerBox.y - 25, 18, WHITE);
-	TextInputBox(answerBox,
-	             newUser.answer,
-	             MAX_LEN,
-	             &answerCount,
-	             5,
-	             false);
+	TextInputBox(answerBox, newUser.answer, MAX_LEN, &answerCount, 5, false);
 
-	if(HoverButton(registerButton,
-	               "REGISTER",
-	               BLUE,
-	               GREEN,
-	               WHITE)) {
-		if(registerUsernameCount == 0 ||
-		   registerPasswordCount == 0 ||
-		   confirmPasswordCount == 0 ||
-		   questionCount == 0 ||
-		   answerCount == 0) {
+	if(HoverButton(registerButton, "REGISTER", BLUE, GREEN, WHITE)) {
+		if(registerUsernameCount == 0 || registerPasswordCount == 0 || confirmPasswordCount == 0 || questionCount == 0 || answerCount == 0) {
 			registerError = true;
 			registerSuccess = false;
-		} else if(strcmp(newUser.password,
-		          confirmPassword)==0) {
+		} else if(strcmp(newUser.password, confirmPassword)==0) {
 			newUser.isAdmin = 0;
 
 			if(RegisterUser(newUser)) {
@@ -2457,11 +1940,7 @@ void signup_screen(void) {
 		}
 	}
 
-	if(HoverButton(backButton,
-	               "BACK",
-	               GRAY,
-	               RED,
-	               WHITE)) {
+	if(HoverButton(backButton, "BACK", GRAY, RED, WHITE)) {
 		registerError = false;
 		registerSuccess = false;
 
@@ -2471,21 +1950,13 @@ void signup_screen(void) {
 	if(registerError) {
 		const char *registerErrorMsg = "Registration Failed!";
 
-		if(registerUsernameCount == 0 ||
-		   registerPasswordCount == 0 ||
-		   confirmPasswordCount == 0 ||
-		   questionCount == 0 ||
-		   answerCount == 0) {
+		if(registerUsernameCount == 0 || registerPasswordCount == 0 || confirmPasswordCount == 0 || questionCount == 0 || answerCount == 0) {
 			registerErrorMsg = "Please fill in all fields!";
 		} else if(strcmp(newUser.password, confirmPassword) != 0) {
 			registerErrorMsg = "Passwords do not match!";
 		}
 
-		DrawText(registerErrorMsg,
-		         fieldX,
-		         card.y + 690,
-		         22,
-		         RED);
+		DrawText(registerErrorMsg, fieldX, card.y + 690, 22, RED);
 	}
 }
 
@@ -2506,20 +1977,10 @@ void forgot_password_screen(void) {
 	DrawRectangleRounded(card, 0.08f, 10, DARKBLUE);
 	DrawRectangleRoundedLines(card, 0.08f, 10, 3, SKYBLUE);
 
-	DrawText("FORGOT PASSWORD",
-	         SCREEN_W/2 -
-	         MeasureText("FORGOT PASSWORD",40)/2,
-	         card.y + 50,
-	         40,
-	         WHITE);
+	DrawText("FORGOT PASSWORD", SCREEN_W/2 - MeasureText("FORGOT PASSWORD",40)/2, card.y + 50, 40, WHITE);
 
 	DrawText("Username", fieldX, usernameBox.y - 25, 18, WHITE);
-	TextInputBox(usernameBox,
-	             forgotUsername,
-	             MAX_LEN,
-	             &forgotUsernameCount,
-	             1,
-	             false);
+	TextInputBox(usernameBox, forgotUsername, MAX_LEN, &forgotUsernameCount, 1, false);
 
 	char question[MAX_LEN] = "";
 
@@ -2533,36 +1994,16 @@ void forgot_password_screen(void) {
 	         TextFormat("Q: %s", question) :
 	         "Q: (enter username above)";
 
-	DrawText(questionText,
-	         fieldX,
-	         usernameBox.y + 75,
-	         QUESTION_TEXT_SIZE,
-	         SKYBLUE);
+	DrawText(questionText, fieldX, usernameBox.y + 75, QUESTION_TEXT_SIZE, SKYBLUE);
 
 	DrawText("Security Answer", fieldX, answerBox.y - 25, 18, WHITE);
-	TextInputBox(answerBox,
-	             forgotAnswer,
-	             MAX_LEN,
-	             &forgotAnswerCount,
-	             2,
-	             false);
+	TextInputBox(answerBox, forgotAnswer, MAX_LEN, &forgotAnswerCount, 2, false);
 
 	DrawText("New Password", fieldX, passwordBox.y - 25, 18, WHITE);
-	TextInputBox(passwordBox,
-	             forgotNewPassword,
-	             MAX_LEN,
-	             &forgotPasswordCount,
-	             3,
-	             true);
+	TextInputBox(passwordBox, forgotNewPassword, MAX_LEN, &forgotPasswordCount, 3, true);
 
-	if(HoverButton(resetButton,
-	               "RESET PASSWORD",
-	               BLUE,
-	               GREEN,
-	               WHITE)) {
-		if(ForgotPassword(forgotUsername,
-		                  forgotAnswer,
-		                  forgotNewPassword)) {
+	if(HoverButton(resetButton, "RESET PASSWORD", BLUE, GREEN, WHITE)) {
+		if(ForgotPassword(forgotUsername, forgotAnswer, forgotNewPassword)) {
 			forgotSuccess = true;
 			forgotError = false;
 
@@ -2583,11 +2024,7 @@ void forgot_password_screen(void) {
 		}
 	}
 
-	if(HoverButton(backButton,
-	               "BACK",
-	               GRAY,
-	               RED,
-	               WHITE)) {
+	if(HoverButton(backButton, "BACK", GRAY, RED, WHITE)) {
 		forgotError = false;
 		forgotSuccess = false;
 
@@ -2595,11 +2032,7 @@ void forgot_password_screen(void) {
 	}
 
 	if(forgotError) {
-		DrawText("Incorrect Username or Security Answer!",
-		         fieldX,
-		         card.y + 600,
-		         22,
-		         RED);
+		DrawText("Incorrect Username or Security Answer!", fieldX, card.y + 600, 22, RED);
 	}
 }
 
@@ -2626,17 +2059,9 @@ static void admin_account_settings_screen(void) {
 	DrawRectangleRounded(card, 0.05f, 10, DARKBLUE);
 	DrawRectangleRoundedLines(card, 0.05f, 10, 3, SKYBLUE);
 
-	DrawText("ACCOUNT SETTINGS",
-	         SCREEN_W/2 - MeasureText("ACCOUNT SETTINGS",40)/2,
-	         card.y + 35,
-	         40,
-	         WHITE);
+	DrawText("ACCOUNT SETTINGS", SCREEN_W/2 - MeasureText("ACCOUNT SETTINGS",40)/2, card.y + 35, 40, WHITE);
 
-	DrawText("All Accounts (Admin)",
-	         SCREEN_W/2 - MeasureText("All Accounts (Admin)",20)/2,
-	         card.y + 85,
-	         20,
-	         SKYBLUE);
+	DrawText("All Accounts (Admin)", SCREEN_W/2 - MeasureText("All Accounts (Admin)",20)/2, card.y + 85, 20, SKYBLUE);
 
 	// Left: scrollable list of every account
 
@@ -2676,27 +2101,17 @@ static void admin_account_settings_screen(void) {
 	for(int i = 0; i < userCount; i++) {
 		Rectangle row = {listPanel.x + 8, rowY, listPanel.width - 16, ADMIN_LIST_ROW_H - 8};
 
-		if(rowY + ADMIN_LIST_ROW_H >= listPanel.y &&
-		        rowY <= listPanel.y + listPanel.height) {
+		if(rowY + ADMIN_LIST_ROW_H >= listPanel.y && rowY <= listPanel.y + listPanel.height) {
 			bool isSelected = strcmp(userList[i].username, targetUsername) == 0;
 			bool isHover = CheckCollisionPointRec(mouse, row) &&
 			               CheckCollisionPointRec(mouse, listPanel);
 
-			DrawRectangleRounded(row, 0.2f, 8,
-			                     isSelected ? SKYBLUE : (isHover ? Fade(SKYBLUE,0.35f) : Fade(DARKBLUE,0.6f)));
+			DrawRectangleRounded(row, 0.2f, 8, isSelected ? SKYBLUE : (isHover ? Fade(SKYBLUE,0.35f) : Fade(DARKBLUE,0.6f)));
 
-			DrawText(TextSubtext(userList[i].username, 0, 20),
-			         row.x + 12,
-			         row.y + 8,
-			         20,
-			         isSelected ? DARKBLUE : WHITE);
+			DrawText(TextSubtext(userList[i].username, 0, 20), row.x + 12, row.y + 8, 20, isSelected ? DARKBLUE : WHITE);
 
 			if(userList[i].isAdmin) {
-				DrawText("ADMIN",
-				         row.x + row.width - MeasureText("ADMIN",16) - 10,
-				         row.y + 10,
-				         16,
-				         isSelected ? MAROON : RED);
+				DrawText("ADMIN", row.x + row.width - MeasureText("ADMIN",16) - 10, row.y + 10, 16, isSelected ? MAROON : RED);
 			}
 
 			if(isHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
@@ -2723,14 +2138,7 @@ static void admin_account_settings_screen(void) {
 	int editorX = listPanel.x + listPanel.width + 50;
 	int editorW = card.x + card.width - 40 - editorX;
 
-	DrawText(TextFormat("Editing: %s%s",
-	                    targetUsername,
-	                    (strcmp(targetUsername, currentUser.username) == 0) ?
-	                    " (you)" : ""),
-	         editorX,
-	         card.y + 130,
-	         26,
-	         WHITE);
+	DrawText(TextFormat("Editing: %s%s", targetUsername, (strcmp(targetUsername, currentUser.username) == 0) ? " (you)" : ""), editorX, card.y + 130, 26, WHITE);
 
 	Rectangle usernameBox = {editorX, card.y + 190, editorW, AUTH_FIELD_H};
 	Rectangle passwordBox = {editorX, card.y + 280, editorW, AUTH_FIELD_H};
@@ -2788,11 +2196,7 @@ static void admin_account_settings_screen(void) {
 
 	// Delete Account (the SELECTED account)
 
-	if(HoverButton(deleteBtn,
-	               deleteConfirm ? "CLICK AGAIN TO CONFIRM" : "DELETE ACCOUNT",
-	               deleteConfirm ? RED : MAROON,
-	               RED,
-	               WHITE)) {
+	if(HoverButton(deleteBtn, deleteConfirm ? "CLICK AGAIN TO CONFIRM" : "DELETE ACCOUNT", deleteConfirm ? RED : MAROON, RED, WHITE)) {
 		if(deleteConfirm) {
 			bool deletingSelf = strcmp(targetUsername, currentUser.username) == 0;
 
@@ -2872,19 +2276,11 @@ static void admin_account_settings_screen(void) {
 	}
 
 	if(settingsSuccess) {
-		DrawText("Changes Saved Successfully!",
-		         editorX,
-		         card.y + 625,
-		         22,
-		         GREEN);
+		DrawText("Changes Saved Successfully!", editorX, card.y + 625, 22, GREEN);
 	}
 
 	if(settingsError) {
-		DrawText("Operation Failed!",
-		         editorX,
-		         card.y + 625,
-		         22,
-		         RED);
+		DrawText("Operation Failed!", editorX, card.y + 625, 22, RED);
 	}
 }
 
@@ -2912,40 +2308,20 @@ void settings_screen(void) {
 	DrawRectangleRounded(card, 0.08f, 10, DARKBLUE);
 	DrawRectangleRoundedLines(card, 0.08f, 10, 3, SKYBLUE);
 
-	DrawText("ACCOUNT SETTINGS",
-	         SCREEN_W/2 -
-	         MeasureText("ACCOUNT SETTINGS",40)/2,
-	         card.y + 50,
-	         40,
-	         WHITE);
+	DrawText("ACCOUNT SETTINGS", SCREEN_W/2 - MeasureText("ACCOUNT SETTINGS",40)/2, card.y + 50, 40, WHITE);
 
 	DrawText("New Username", fieldX, usernameBox.y - 25, 20, WHITE);
 
-	TextInputBox(usernameBox,
-	             newUsername,
-	             MAX_LEN,
-	             &newUsernameCount,
-	             1,
-	             false);
+	TextInputBox(usernameBox, newUsername, MAX_LEN, &newUsernameCount, 1, false);
 
 	DrawText("New Password", fieldX, passwordBox.y - 25, 20, WHITE);
 
-	TextInputBox(passwordBox,
-	             newPassword,
-	             MAX_LEN,
-	             &newPasswordCount,
-	             2,
-	             true);
+	TextInputBox(passwordBox, newPassword, MAX_LEN, &newPasswordCount, 2, true);
 
 	// Change Username
 
-	if(HoverButton(usernameBtn,
-	               "CHANGE USERNAME",
-	               BLUE,
-	               GREEN,
-	               WHITE)) {
-		if(ChangeUsername(currentUser.username,
-		                  newUsername)) {
+	if(HoverButton(usernameBtn, "CHANGE USERNAME", BLUE, GREEN, WHITE)) {
+		if(ChangeUsername(currentUser.username, newUsername)) {
 			strcpy(currentUser.username,newUsername);
 
 			settingsSuccess = true;
@@ -2961,13 +2337,8 @@ void settings_screen(void) {
 
 	// Change Password
 
-	if(HoverButton(passwordBtn,
-	               "CHANGE PASSWORD",
-	               BLUE,
-	               GREEN,
-	               WHITE)) {
-		if(ChangePassword(currentUser.username,
-		                  newPassword)) {
+	if(HoverButton(passwordBtn, "CHANGE PASSWORD", BLUE, GREEN, WHITE)) {
+		if(ChangePassword(currentUser.username, newPassword)) {
 			settingsSuccess = true;
 			settingsError = false;
 
@@ -2981,11 +2352,7 @@ void settings_screen(void) {
 
 	// Logout
 
-	if(HoverButton(logoutBtn,
-	               "LOGOUT",
-	               GRAY,
-	               RED,
-	               WHITE)) {
+	if(HoverButton(logoutBtn, "LOGOUT", GRAY, RED, WHITE)) {
 		loggedIn = 0;
 
 		memset(&currentUser,0,sizeof(User));
@@ -2995,11 +2362,7 @@ void settings_screen(void) {
 
 	// Back
 
-	if(HoverButton(backBtn,
-	               "BACK",
-	               GRAY,
-	               RED,
-	               WHITE)) {
+	if(HoverButton(backBtn, "BACK", GRAY, RED, WHITE)) {
 		settingsSuccess = false;
 		settingsError = false;
 
@@ -3007,19 +2370,11 @@ void settings_screen(void) {
 	}
 
 	if(settingsSuccess) {
-		DrawText("Changes Saved Successfully!",
-		         fieldX,
-		         card.y + 600,
-		         22,
-		         GREEN);
+		DrawText("Changes Saved Successfully!", fieldX, card.y + 600, 22, GREEN);
 	}
 
 	if(settingsError) {
-		DrawText("Operation Failed!",
-		         fieldX,
-		         card.y + 600,
-		         22,
-		         RED);
+		DrawText("Operation Failed!", fieldX, card.y + 600, 22, RED);
 	}
 }
 
@@ -3033,49 +2388,29 @@ void admin_panel(void) {
 	Rectangle btnSettings = {BTN_X, BTN3_Y, BTN_W, BTN_H};
 	Rectangle btnLogout   = {BTN_X, BTN4_Y, BTN_W, BTN_H};
 
-	DrawText("NUMBER CONVERSION SYSTEM",
-	         (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2,
-	         TITLE_Y, TITLE_SIZE, GREEN);
+	DrawText("NUMBER CONVERSION SYSTEM", (SCREEN_W - MeasureText("NUMBER CONVERSION SYSTEM", TITLE_SIZE)) / 2, TITLE_Y, TITLE_SIZE, GREEN);
 
-	DrawText("ADMIN PANEL",
-	         (SCREEN_W - MeasureText("ADMIN PANEL", TITLE_SIZE)) / 2,
-	         TITLE_Y + 65, TITLE_SIZE, GREEN);
+	DrawText("ADMIN PANEL", (SCREEN_W - MeasureText("ADMIN PANEL", TITLE_SIZE)) / 2, TITLE_Y + 65, TITLE_SIZE, GREEN);
 
-	DrawText(currentTime,
-	         (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2,
-	         TITLE_Y + 125, SUBTITLE_SIZE, GRAY);
+	DrawText(currentTime, (SCREEN_W - MeasureText(currentTime, SUBTITLE_SIZE)) / 2, TITLE_Y + 125, SUBTITLE_SIZE, GRAY);
 
-	DrawRectangleRec(btnNumLogs,
-	                 CheckCollisionPointRec(mouse, btnNumLogs) ? SKYBLUE : DARKBLUE);
+	DrawRectangleRec(btnNumLogs, CheckCollisionPointRec(mouse, btnNumLogs) ? SKYBLUE : DARKBLUE);
 
-	DrawRectangleRec(btnBitLogs,
-	                 CheckCollisionPointRec(mouse, btnBitLogs) ? SKYBLUE : DARKBLUE);
+	DrawRectangleRec(btnBitLogs, CheckCollisionPointRec(mouse, btnBitLogs) ? SKYBLUE : DARKBLUE);
 
-	DrawRectangleRec(btnSettings,
-	                 CheckCollisionPointRec(mouse, btnSettings) ? SKYBLUE : DARKBLUE);
+	DrawRectangleRec(btnSettings, CheckCollisionPointRec(mouse, btnSettings) ? SKYBLUE : DARKBLUE);
 
-	DrawRectangleRec(btnLogout,
-	                 CheckCollisionPointRec(mouse, btnLogout) ? RED : MAROON);
+	DrawRectangleRec(btnLogout, CheckCollisionPointRec(mouse, btnLogout) ? RED : MAROON);
 
-	DrawText("Number Logs",
-	         BTN_X + (BTN_W - MeasureText("Number Logs", BUTTON_TEXT_SIZE)) / 2,
-	         BTN1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+	DrawText("Number Logs", BTN_X + (BTN_W - MeasureText("Number Logs", BUTTON_TEXT_SIZE)) / 2, BTN1_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-	DrawText("Bitwise Logs",
-	         BTN_X + (BTN_W - MeasureText("Bitwise Logs", BUTTON_TEXT_SIZE)) / 2,
-	         BTN2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+	DrawText("Bitwise Logs", BTN_X + (BTN_W - MeasureText("Bitwise Logs", BUTTON_TEXT_SIZE)) / 2, BTN2_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-	DrawText("Account Settings",
-	         BTN_X + (BTN_W - MeasureText("Account Settings", BUTTON_TEXT_SIZE)) / 2,
-	         BTN3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+	DrawText("Account Settings", BTN_X + (BTN_W - MeasureText("Account Settings", BUTTON_TEXT_SIZE)) / 2, BTN3_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-	DrawText("Logout",
-	         BTN_X + (BTN_W - MeasureText("Logout", BUTTON_TEXT_SIZE)) / 2,
-	         BTN4_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+	DrawText("Logout", BTN_X + (BTN_W - MeasureText("Logout", BUTTON_TEXT_SIZE)) / 2, BTN4_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
-	DrawText("CONTRIBUTORS: @sulavmhx, @saurav112-dot",
-	         BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2,
-	         BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
+	DrawText("CONTRIBUTORS: @sulavmhx, @saurav112-dot", BACK_X + (BACK_W - MeasureText("Back", BUTTON_TEXT_SIZE)) / 2, BACK_Y + 20, BUTTON_TEXT_SIZE, WHITE);
 
 	DrawAccountBadge();
 
@@ -3083,33 +2418,27 @@ void admin_panel(void) {
 	// (Admin can only VIEW logs -- no access to the
 	// number conversion or bitwise tools themselves)
 
-	if(CheckCollisionPointRec(mouse, btnNumLogs) &&
-	        IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+	if(CheckCollisionPointRec(mouse, btnNumLogs) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 		currentScreen = ADMIN_NUM_LOGS;
 	}
 
 	// Bitwise Operation Logs
 
-	if(CheckCollisionPointRec(mouse, btnBitLogs) &&
-	        IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+	if(CheckCollisionPointRec(mouse, btnBitLogs) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 		currentScreen = ADMIN_BIT_LOGS;
 	}
 
 	// Account Settings
 
-	if(CheckCollisionPointRec(mouse, btnSettings) &&
-	        IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+	if(CheckCollisionPointRec(mouse, btnSettings) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 		currentScreen = SETTINGS_SCREEN;
 	}
 
 	// Logout
-	if(CheckCollisionPointRec(mouse, btnLogout) &&
-	        IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+	if(CheckCollisionPointRec(mouse, btnLogout) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 		loggedIn = 0;
 
-		memset(&currentUser,
-		       0,
-		       sizeof(User));
+		memset(&currentUser, 0, sizeof(User));
 
 		loginUsername[0] = '\0';
 		loginPassword[0] = '\0';

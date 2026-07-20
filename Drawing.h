@@ -68,7 +68,6 @@
 #define POPUP_X (SCREEN_W / 2 - 250)
 #define POPUP_Y (SCREEN_H / 2 - 220)
 
-// ------------------------------------------------------------------
 // Generic centering helpers, used so every floating window (login,
 // register, forgot password, settings, popups...) is centered on the
 // SAME design resolution (SCREEN_W x SCREEN_H) that the rest of the
@@ -76,7 +75,7 @@
 // would desync from everything else the moment the game runs in
 // fullscreen on a monitor that isn't exactly 1920x1080, which is
 // what was causing the cards/boxes to look off-center.
-// ------------------------------------------------------------------
+
 #define CENTER_X(w)     ((SCREEN_W - (w)) / 2)
 #define CENTER_Y(h)     ((SCREEN_H - (h)) / 2)
 
@@ -125,22 +124,11 @@ void forgot_password_screen(void);
 void settings_screen(void);
 void admin_panel(void);
 
-void TextInputBox(Rectangle box,
-                  char text[],
-                  int maxLength,
-                  int *letterCount,
-                  int id,
-                  bool isPassword);
+void TextInputBox(Rectangle box,char text[],int maxLength,int *letterCount,int id,bool isPassword);
 
-bool HoverButton(Rectangle button,
-                 const char text[],
-                 Color normal,
-                 Color hover,
-                 Color textColor);
+bool HoverButton(Rectangle button,const char text[],Color normal,Color hover,Color textColor);
 
-void Popup(const char title[],
-           const char message[],
-           Color color);
+void Popup(const char title[],const char message[],Color color);
 
 void DrawAccountBadge(void);
 

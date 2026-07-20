@@ -27,13 +27,7 @@ void InitializeAdmin(void)
 
     admin.isAdmin = 1;
 
-    fprintf(fp,
-            "%s %s %s %s %d\n",
-            admin.username,
-            admin.password,
-            admin.question,
-            admin.answer,
-            admin.isAdmin);
+    fprintf(fp, "%s %s %s %s %d\n", admin.username, admin.password, admin.question, admin.answer, admin.isAdmin);
 
     fclose(fp);
 }
@@ -51,13 +45,7 @@ int UsernameExists(char username[])
         return 0;
     }
 
-    while(fscanf(fp,
-                 "%s %s %s %s %d",
-                 temp.username,
-                 temp.password,
-                 temp.question,
-                 temp.answer,
-                 &temp.isAdmin) != EOF)
+    while(fscanf(fp, "%s %s %s %s %d", temp.username, temp.password, temp.question, temp.answer, &temp.isAdmin) != EOF)
     {
         if(strcmp(username,temp.username) == 0)
         {
@@ -84,13 +72,7 @@ int GetSecurityQuestion(char username[], char outQuestion[])
         return 0;
     }
 
-    while(fscanf(fp,
-                 "%s %s %s %s %d",
-                 temp.username,
-                 temp.password,
-                 temp.question,
-                 temp.answer,
-                 &temp.isAdmin) != EOF)
+    while(fscanf(fp, "%s %s %s %s %d", temp.username, temp.password, temp.question, temp.answer, &temp.isAdmin) != EOF)
     {
         if(strcmp(username,temp.username) == 0)
         {
@@ -119,14 +101,7 @@ int GetAllUsers(User users[], int maxUsers)
         return 0;
     }
 
-    while(count < maxUsers &&
-          fscanf(fp,
-                 "%s %s %s %s %d",
-                 users[count].username,
-                 users[count].password,
-                 users[count].question,
-                 users[count].answer,
-                 &users[count].isAdmin) != EOF)
+    while(count < maxUsers && fscanf(fp, "%s %s %s %s %d", users[count].username, users[count].password, users[count].question, users[count].answer, &users[count].isAdmin) != EOF)
     {
         count++;
     }
@@ -152,13 +127,7 @@ int RegisterUser(User newUser)
         return 0;
     }
 
-    fprintf(fp,
-            "%s %s %s %s %d\n",
-            newUser.username,
-            newUser.password,
-            newUser.question,
-            newUser.answer,
-            newUser.isAdmin);
+    fprintf(fp, "%s %s %s %s %d\n", newUser.username, newUser.password, newUser.question, newUser.answer, newUser.isAdmin);
 
     fclose(fp);
 
@@ -177,16 +146,9 @@ int LoginUser(char username[], char password[])
         return 0;
     }
 
-    while (fscanf(fp,
-                  "%s %s %s %s %d",
-                  temp.username,
-                  temp.password,
-                  temp.question,
-                  temp.answer,
-                  &temp.isAdmin) != EOF)
+    while (fscanf(fp, "%s %s %s %s %d", temp.username, temp.password, temp.question, temp.answer, &temp.isAdmin) != EOF)
     {
-        if (strcmp(username, temp.username) == 0 &&
-            strcmp(password, temp.password) == 0)
+        if (strcmp(username, temp.username) == 0 && strcmp(password, temp.password) == 0)
         {
             currentUser = temp;   // Save the logged-in user
 
@@ -219,13 +181,7 @@ int ChangePassword(char username[], char newPassword[])
 
     tempFile = fopen("temp.txt", "w");
 
-    while (fscanf(fp,
-                  "%s %s %s %s %d",
-                  temp.username,
-                  temp.password,
-                  temp.question,
-                  temp.answer,
-                  &temp.isAdmin) != EOF)
+    while (fscanf(fp, "%s %s %s %s %d", temp.username, temp.password, temp.question, temp.answer, &temp.isAdmin) != EOF)
     {
         // If this is the correct user
         if (strcmp(temp.username, username) == 0)
@@ -236,13 +192,7 @@ int ChangePassword(char username[], char newPassword[])
         }
 
         // Write the user (updated or not) into temp.txt
-        fprintf(tempFile,
-                "%s %s %s %s %d\n",
-                temp.username,
-                temp.password,
-                temp.question,
-                temp.answer,
-                temp.isAdmin);
+        fprintf(tempFile, "%s %s %s %s %d\n", temp.username, temp.password, temp.question, temp.answer, temp.isAdmin);
     }
 
     fclose(fp);
@@ -279,13 +229,7 @@ int ChangeUsername(char oldUsername[], char newUsername[])
 
     tempFile = fopen("temp.txt", "w");
 
-    while (fscanf(fp,
-                  "%s %s %s %s %d",
-                  temp.username,
-                  temp.password,
-                  temp.question,
-                  temp.answer,
-                  &temp.isAdmin) != EOF)
+    while (fscanf(fp, "%s %s %s %s %d", temp.username, temp.password, temp.question, temp.answer, &temp.isAdmin) != EOF)
     {
         // Find the current user
         if (strcmp(temp.username, oldUsername) == 0)
@@ -295,13 +239,7 @@ int ChangeUsername(char oldUsername[], char newUsername[])
             found = 1;
         }
 
-        fprintf(tempFile,
-                "%s %s %s %s %d\n",
-                temp.username,
-                temp.password,
-                temp.question,
-                temp.answer,
-                temp.isAdmin);
+        fprintf(tempFile, "%s %s %s %s %d\n", temp.username, temp.password, temp.question, temp.answer, temp.isAdmin);
     }
 
     fclose(fp);
@@ -338,13 +276,7 @@ int DeleteAccount(char username[])
 
     tempFile = fopen("temp.txt", "w");
 
-    while (fscanf(fp,
-                  "%s %s %s %s %d",
-                  temp.username,
-                  temp.password,
-                  temp.question,
-                  temp.answer,
-                  &temp.isAdmin) != EOF)
+    while (fscanf(fp, "%s %s %s %s %d", temp.username, temp.password, temp.question, temp.answer, &temp.isAdmin) != EOF)
     {
         // Skip writing this user -- that's the "delete"
         if (strcmp(temp.username, username) == 0)
@@ -353,13 +285,7 @@ int DeleteAccount(char username[])
             continue;
         }
 
-        fprintf(tempFile,
-                "%s %s %s %s %d\n",
-                temp.username,
-                temp.password,
-                temp.question,
-                temp.answer,
-                temp.isAdmin);
+        fprintf(tempFile, "%s %s %s %s %d\n", temp.username, temp.password, temp.question, temp.answer, temp.isAdmin);
     }
 
     fclose(fp);
@@ -390,30 +316,17 @@ int ForgotPassword(char username[],char answer[],char newPassword[])
 
     tempFile = fopen("temp.txt", "w");
 
-    while(fscanf(fp,
-                 "%s %s %s %s %d",
-                 temp.username,
-                 temp.password,
-                 temp.question,
-                 temp.answer,
-                 &temp.isAdmin) != EOF)
+    while(fscanf(fp, "%s %s %s %s %d", temp.username, temp.password, temp.question, temp.answer, &temp.isAdmin) != EOF)
     {
         // Check username and security answer
-        if(strcmp(temp.username, username) == 0 &&
-           strcmp(temp.answer, answer) == 0)
+        if(strcmp(temp.username, username) == 0 && strcmp(temp.answer, answer) == 0)
         {
             strcpy(temp.password, newPassword);
 
             found = 1;
         }
 
-        fprintf(tempFile,
-                "%s %s %s %s %d\n",
-                temp.username,
-                temp.password,
-                temp.question,
-                temp.answer,
-                temp.isAdmin);
+        fprintf(tempFile, "%s %s %s %s %d\n", temp.username, temp.password, temp.question, temp.answer, temp.isAdmin);
     }
 
     fclose(fp);

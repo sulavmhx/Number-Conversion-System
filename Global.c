@@ -1,9 +1,7 @@
 #include "Global.h"
 #include "Drawing.h"
 
-//================================================
 // Number Converter
-//================================================
 
 int input_choice = 0;
 int output_choice = 0;
@@ -46,9 +44,8 @@ int shift = 0;
 
 char temp[32] = "";
 
-//================================================
 // Account System
-//================================================
+
 
 User currentUser;
 int currentScreen = LOGIN_SCREEN;
@@ -65,9 +62,9 @@ int loginPasswordCount = 0;
 bool showPassword = false;
 bool loginError = false;
 
-//================================================
+
 // Login Screen UI
-//================================================
+
 
 Rectangle usernameBox = {760, 320, 400, 50};
 Rectangle passwordBox = {760, 400, 400, 50};
@@ -109,9 +106,8 @@ int newPasswordCount = 0;
 bool settingsSuccess = false;
 bool settingsError = false;
 
-//================================================
 // Admin - Account Settings (manage all accounts)
-//================================================
+
 
 char editingUsername[MAX_LEN] = "";
 int  accountListScroll = 0;
